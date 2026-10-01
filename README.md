@@ -1,4 +1,3 @@
-[README (1).md](https://github.com/user-attachments/files/32881266/README.1.md)
 # Site Institucional — Vila do Artesão
 
 Site institucional desenvolvido como projeto de extensão universitária, em parceria com a Vila do Artesão e a Casa do Empreendedor, com o objetivo de ampliar a visitação da Vila ao longo do ano e apoiar a divulgação dos artesãos.
@@ -11,14 +10,18 @@ Versão inicial do site, com interface amistosa, elementos visuais característi
 
 Paleta sugerida, inspirada em barro, palha, couro e algodão cru. Usar uma cor de base clara para fundo, uma ou duas cores quentes como destaque (botões, títulos) e uma cor escura para texto/contraste:
 
-| Uso | Cor | Hex |
-|---|---|---|
-| Fundo / base clara | Areia / palha clara | `#F2E8D9` |
-| Destaque principal | Terracota | `#C96F4A` |
-| Destaque secundário | Marrom couro | `#8A5A3B` |
-| Contraste / texto | Marrom escuro | `#3E2A20` |
-| Acento (detalhes, ícones) | Mostarda / algodão tingido | `#D9A441` |
-| Verde de apoio (natureza/cangaço) | Verde oliva suave | `#6B7A4F` |
+Fundo / base clara — Areia / palha clara — 
+#F2E8D9
+Destaque principal — Terracota — 
+#C96F4A
+Destaque secundário — Marrom couro — 
+#8A5A3B
+Contraste / texto — Marrom escuro — 
+#3E2A20
+Acento (detalhes, ícones) — Mostarda / algodão tingido — 
+#D9A441
+Verde de apoio (natureza/cangaço) — Verde oliva suave — 
+#6B7A4F
 
 Evitar tons frios (azul, cinza puro) como cor dominante — usar no máximo como neutro de apoio, nunca como protagonista, para manter a sensação de artesanato/rústico.
 
