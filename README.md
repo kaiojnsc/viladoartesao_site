@@ -10,18 +10,16 @@ Versão inicial do site, com interface amistosa, elementos visuais característi
 
 Paleta sugerida, inspirada em barro, palha, couro e algodão cru. Usar uma cor de base clara para fundo, uma ou duas cores quentes como destaque (botões, títulos) e uma cor escura para texto/contraste:
 
-Fundo / base clara — Areia / palha clara — 
-#F2E8D9
-Destaque principal — Terracota — 
-#C96F4A
-Destaque secundário — Marrom couro — 
-#8A5A3B
-Contraste / texto — Marrom escuro — 
-#3E2A20
-Acento (detalhes, ícones) — Mostarda / algodão tingido — 
-#D9A441
-Verde de apoio (natureza/cangaço) — Verde oliva suave — 
-#6B7A4F
+## Paleta de Cores
+
+| Cor | Hexadecimal | Nome | Aplicação Sugerida |
+| :---: | :---: | :--- | :--- |
+| <img src="https://placehold.co/25x25/F2E8D9/F2E8D9.png" width="25" /> | `#F2E8D9` | Areia / Palha | Fundo / base clara |
+| <img src="https://placehold.co/25x25/C96F4A/C96F4A.png" width="25" /> | `#C96F4A` | Terracota | Destaque principal (botões, títulos) |
+| <img src="https://placehold.co/25x25/8A5A3B/8A5A3B.png" width="25" /> | `#8A5A3B` | Marrom Couro | Destaque secundário |
+| <img src="https://placehold.co/25x25/3E2A20/3E2A20.png" width="25" /> | `#3E2A20` | Marrom Escuro | Contraste / texto principal |
+| <img src="https://placehold.co/25x25/D9A441/D9A441.png" width="25" /> | `#D9A441` | Mostarda | Acento (detalhes, ícones) |
+| <img src="https://placehold.co/25x25/6B7A4F/6B7A4F.png" width="25" /> | `#6B7A4F` | Verde Oliva | Verde de apoio (natureza) |
 
 Evitar tons frios (azul, cinza puro) como cor dominante — usar no máximo como neutro de apoio, nunca como protagonista, para manter a sensação de artesanato/rústico.
 
@@ -71,6 +69,7 @@ vila-do-artesao-site/
 ├── /js
 └── /docs              # resumos expandidos, relatórios do projeto
 ```
+
 
 ## Próximos passos
 
