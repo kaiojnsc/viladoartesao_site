@@ -1,0 +1,338 @@
+.artisans-page {
+  max-width: none;
+  padding: 0 0 var(--space-12);
+}
+
+.artisans-hero {
+  max-width: 56rem;
+  margin-inline: auto;
+  padding: clamp(var(--space-8), 8vw, var(--space-16)) var(--space-page) var(--space-10);
+  text-align: center;
+}
+
+.artisans-hero h1 {
+  margin-block: var(--space-3) var(--space-4);
+  color: var(--color-leather);
+  font-size: clamp(2.4rem, 6vw, 4rem);
+}
+
+.artisans-hero__lead {
+  max-width: 44rem;
+  margin-inline: auto;
+  color: var(--color-text-muted);
+  font-size: clamp(var(--font-size-md), 2vw, var(--font-size-lg));
+}
+
+.artisans-hero__note {
+  margin-top: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.artisan-segments {
+  padding: clamp(var(--space-8), 6vw, var(--space-12)) var(--space-page);
+  background:
+    radial-gradient(ellipse at 50% 0, rgb(217 166 46 / 12%), transparent 35rem),
+    var(--color-warm-white);
+}
+
+.artisan-segments > .section-heading,
+.artisan-segment-grid,
+.artisan-segment-help,
+.artisan-selection-status,
+.artisan-catalog-cta,
+.artisan-catalog {
+  width: min(100%, var(--content-width));
+  margin-inline: auto;
+}
+
+.artisan-segment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.artisan-segment {
+  display: flex;
+  min-height: 7rem;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-warm-white);
+  color: var(--color-coffee);
+  font: inherit;
+  font-size: var(--font-size-sm);
+  font-weight: 850;
+  line-height: 1.35;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.artisan-segment:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-terracotta);
+  box-shadow: var(--shadow-raised);
+}
+
+.artisan-segment[aria-pressed="true"] {
+  border-color: var(--color-leather);
+  background: var(--color-cotton);
+  box-shadow: 0 0 0 2px rgb(117 69 47 / 15%);
+}
+
+.artisan-segment__icon {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: rgb(189 103 67 / 12%);
+  color: var(--color-terracotta);
+}
+
+.artisan-segment:nth-child(3n + 2) .artisan-segment__icon {
+  background: rgb(100 116 71 / 12%);
+  color: #52633b;
+}
+
+.artisan-segment:nth-child(3n) .artisan-segment__icon {
+  background: rgb(217 166 46 / 18%);
+  color: #674b0f;
+}
+
+.artisan-segment__icon svg {
+  width: 1.65rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.artisan-segment-help {
+  margin-top: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  text-align: center;
+}
+
+.artisan-selection-status {
+  min-height: 1.5rem;
+  margin-top: var(--space-2);
+  color: var(--color-leather);
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+  text-align: center;
+}
+
+.artisan-catalog-cta {
+  display: grid;
+  justify-items: center;
+  margin-top: var(--space-5);
+  text-align: center;
+}
+
+.artisan-catalog-cta .button {
+  min-height: 3.5rem;
+  margin-top: 0;
+  padding-inline: var(--space-8);
+  font-size: var(--font-size-md);
+}
+
+.artisan-catalog-cta > p {
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.artisan-catalog {
+  padding: clamp(var(--space-8), 6vw, var(--space-12)) var(--space-page) 0;
+  scroll-margin-top: 7rem;
+}
+
+.artisan-catalog[hidden] {
+  display: none;
+}
+
+.artisan-filters {
+  display: grid;
+  grid-template-columns: minmax(12rem, 1fr) minmax(12rem, 1fr) auto;
+  align-items: end;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-warm-white);
+  box-shadow: var(--shadow-card);
+}
+
+.artisan-filters .form-field {
+  margin: 0;
+}
+
+.artisan-filter-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.artisan-filter-actions .button {
+  min-height: 3rem;
+  margin: 0;
+  padding-inline: var(--space-4);
+}
+
+.artisan-results-status {
+  min-height: 1.75rem;
+  margin-block: var(--space-5) var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+}
+
+.artisan-results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: var(--space-4);
+}
+
+.artisan-catalog-card {
+  position: relative;
+  display: flex;
+  min-height: 14rem;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-top: 0.3rem solid var(--color-terracotta);
+  border-radius: var(--radius-lg);
+  background: var(--color-warm-white);
+  box-shadow: var(--shadow-card);
+}
+
+.artisan-catalog-card:nth-child(3n + 2) {
+  border-top-color: var(--color-olive);
+}
+
+.artisan-catalog-card:nth-child(3n) {
+  border-top-color: var(--color-mustard);
+}
+
+.artisan-catalog-card__name {
+  margin: 0;
+  color: var(--color-coffee);
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-heading);
+  overflow-wrap: anywhere;
+}
+
+.artisan-catalog-card__chalet {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--color-cotton);
+  color: var(--color-coffee);
+  font-weight: 850;
+}
+
+.artisan-catalog-card__chalet strong {
+  color: var(--color-leather);
+}
+
+.artisan-catalog-card__segment {
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.artisan-catalog-card__contact {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  padding-top: var(--space-4);
+  color: var(--color-leather);
+  font-weight: 850;
+  text-decoration-thickness: 2px;
+}
+
+.artisan-catalog-card__contact-note {
+  margin-block-start: auto;
+  padding-top: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  font-weight: 750;
+}
+
+.artisan-empty-state {
+  margin-top: var(--space-5);
+  padding: var(--space-6);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--color-cotton);
+  color: var(--color-coffee);
+  text-align: center;
+}
+
+.artisan-data-error {
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 58rem) {
+  .artisan-segment-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .artisan-results-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .artisan-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .artisan-filter-actions {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 38rem) {
+  .artisans-hero {
+    padding-block: var(--space-8);
+  }
+
+  .artisan-segment-grid,
+  .artisan-results-grid,
+  .artisan-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .artisan-segment {
+    min-height: 4.5rem;
+  }
+
+  .artisan-filter-actions {
+    grid-column: auto;
+    flex-direction: column;
+  }
+
+  .artisan-filter-actions .button {
+    width: 100%;
+  }
+
+  .artisan-catalog-cta .button {
+    width: 100%;
+    padding-inline: var(--space-4);
+  }
+}

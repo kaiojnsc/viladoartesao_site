@@ -1,0 +1,196 @@
+.map-page {
+  max-width: none;
+  padding: 0 0 var(--space-12);
+}
+
+.map-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(var(--space-10), 9vw, var(--space-16)) var(--space-page);
+  background:
+    radial-gradient(ellipse at 85% 20%, rgb(217 166 46 / 18%), transparent 25rem),
+    var(--color-warm-white);
+  text-align: center;
+}
+
+.map-hero::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0.4rem;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-terracotta) 0 2rem,
+    var(--color-mustard) 2rem 4rem,
+    var(--color-olive) 4rem 6rem,
+    var(--color-leather) 6rem 8rem
+  );
+  clip-path: polygon(0 0, 100% 0, 100% 60%, 96% 100%, 92% 60%, 88% 100%, 84% 60%, 80% 100%, 76% 60%, 72% 100%, 68% 60%, 64% 100%, 60% 60%, 56% 100%, 52% 60%, 48% 100%, 44% 60%, 40% 100%, 36% 60%, 32% 100%, 28% 60%, 24% 100%, 20% 60%, 16% 100%, 12% 60%, 8% 100%, 4% 60%, 0 100%);
+  content: "";
+}
+
+.map-hero h1 {
+  max-width: 58rem;
+  margin: var(--space-3) auto var(--space-4);
+  color: var(--color-leather);
+  font-size: clamp(2.35rem, 6vw, 4.25rem);
+}
+
+.map-hero > p:not(.eyebrow) {
+  max-width: 46rem;
+  margin-inline: auto;
+  color: var(--color-text-muted);
+  font-size: clamp(var(--font-size-md), 2vw, var(--font-size-lg));
+}
+
+.map-section {
+  width: min(100% - 2 * var(--space-page), var(--content-width));
+  margin-inline: auto;
+  padding-block: clamp(var(--space-8), 6vw, var(--space-12));
+}
+
+.mapa-container {
+  position: relative;
+  display: grid;
+  min-height: clamp(22rem, 55vw, 36rem);
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(ellipse at 50% 40%, rgb(217 166 46 / 16%), transparent 62%),
+    repeating-linear-gradient(135deg, transparent 0 1.1rem, rgb(117 69 47 / 4%) 1.1rem 1.18rem),
+    var(--color-warm-white);
+  box-shadow: var(--shadow-card);
+}
+
+.mapa-container__placeholder {
+  display: grid;
+  width: min(100% - 2 * var(--space-6), 43rem);
+  justify-items: center;
+  padding: var(--space-8);
+  text-align: center;
+}
+
+.mapa-container__illustration {
+  display: grid;
+  width: 5rem;
+  height: 5rem;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-cotton);
+  color: var(--color-leather);
+}
+
+.mapa-container__illustration svg {
+  width: 2.75rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.mapa-container__placeholder h3 {
+  margin-top: var(--space-5);
+  color: var(--color-coffee);
+  font-size: var(--font-size-xl);
+}
+
+.mapa-container__placeholder p {
+  max-width: 39rem;
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.mapa-container__content {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: clamp(22rem, 55vw, 36rem);
+  border: 0;
+}
+
+.mapa-container[data-map-type="image"],
+.mapa-container[data-map-type="svg"] {
+  display: block;
+  min-height: 0;
+  background: var(--color-warm-white);
+}
+
+.mapa-container__content:is(img) {
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+}
+
+.map-directions {
+  display: flex;
+  width: min(100% - 2 * var(--space-page), var(--content-width));
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  margin: 0 auto;
+  padding: clamp(var(--space-5), 4vw, var(--space-8));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-cotton);
+}
+
+.map-directions__copy {
+  max-width: 42rem;
+}
+
+.map-directions__copy h2 {
+  margin-top: var(--space-1);
+  color: var(--color-coffee);
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+}
+
+.map-directions__copy > p:last-child {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+}
+
+.map-directions__actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.map-directions__actions .button {
+  min-height: 2.75rem;
+  margin: 0;
+  padding: var(--space-2) var(--space-4);
+}
+
+@media (max-width: 48rem) {
+  .map-directions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+}
+
+@media (max-width: 36rem) {
+  .map-hero {
+    padding-block: var(--space-8);
+  }
+
+  .mapa-container {
+    min-height: 24rem;
+  }
+
+  .mapa-container__placeholder {
+    padding: var(--space-5);
+  }
+
+  .map-directions__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

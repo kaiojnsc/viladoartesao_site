@@ -1,0 +1,101 @@
+[
+  {
+    "id": "onde-fica",
+    "pergunta": "Onde fica a Vila do Artesão?",
+    "categoria": "Localização e visita",
+    "resposta": "A Vila do Artesão fica em Campina Grande, na Paraíba. Consulte a localização oficial no Google Maps.",
+    "provisoria": false,
+    "link": {
+      "texto": "Ver localização no Google Maps",
+      "url": "https://maps.app.goo.gl/HLXZMhie1bfWJQSa8"
+    }
+  },
+  {
+    "id": "como-chegar",
+    "pergunta": "Como chegar à Vila?",
+    "categoria": "Localização e visita",
+    "resposta": "Abra a localização oficial no Google Maps para consultar o trajeto disponível para você.",
+    "provisoria": false,
+    "link": {
+      "texto": "Como chegar à Vila",
+      "url": "https://maps.app.goo.gl/HLXZMhie1bfWJQSa8"
+    }
+  },
+  {
+    "id": "tipos-artesanato",
+    "pergunta": "Quais tipos de artesanato posso encontrar?",
+    "categoria": "Artesanato e artesãos",
+    "resposta": "O catálogo reúne segmentos como couro, madeira, tecidos e bordados, crochê e trabalhos manuais, gastronomia, arte e decoração, bebidas e licores. Consulte o catálogo para ver os segmentos cadastrados.",
+    "provisoria": false,
+    "link": {
+      "texto": "Consultar segmentos e artesãos",
+      "url": "pages/artesaos.html"
+    }
+  },
+  {
+    "id": "localizar-artesao",
+    "pergunta": "Como localizar um artesão específico?",
+    "categoria": "Artesanato e artesãos",
+    "resposta": "Na página de artesãos, selecione “Fale com um dos nossos artesãos” para abrir o catálogo. Depois, pesquise pelo nome ou filtre por segmento.",
+    "provisoria": false,
+    "link": {
+      "texto": "Abrir catálogo de artesãos",
+      "url": "pages/artesaos.html"
+    }
+  },
+  {
+    "id": "conhecer-chales",
+    "pergunta": "Como conhecer os chalés?",
+    "categoria": "Artesanato e artesãos",
+    "resposta": "No catálogo de artesãos, você pode consultar o número do chalé cadastrado. O mapa da Vila ainda está sendo preparado; a localização de cada chalé não está disponível nesta página.",
+    "provisoria": false,
+    "link": {
+      "texto": "Consultar catálogo de artesãos",
+      "url": "pages/artesaos.html"
+    }
+  },
+  {
+    "id": "agendar-visita",
+    "pergunta": "É possível agendar uma visita?",
+    "categoria": "Localização e visita",
+    "resposta": "Os procedimentos e a disponibilidade para agendamento ainda não foram confirmados. Esta resposta é provisória e precisa ser revisada pela equipe responsável.",
+    "provisoria": true,
+    "link": {
+      "texto": "Consultar a página de agendamento",
+      "url": "pages/agendamento.html"
+    }
+  },
+  {
+    "id": "gastronomia",
+    "pergunta": "Existem opções de gastronomia?",
+    "categoria": "Artesanato e artesãos",
+    "resposta": "Gastronomia aparece como segmento no catálogo, mas opções disponíveis e detalhes de atendimento ainda precisam ser confirmados. Esta resposta é provisória.",
+    "provisoria": true,
+    "link": {
+      "texto": "Ver o catálogo de segmentos",
+      "url": "pages/artesaos.html"
+    }
+  },
+  {
+    "id": "redes-sociais",
+    "pergunta": "A Vila possui redes sociais?",
+    "categoria": "Contato",
+    "resposta": "Sim. A Vila do Artesão pode ser acompanhada pelo perfil oficial no Instagram.",
+    "provisoria": false,
+    "link": {
+      "texto": "Acessar Instagram oficial",
+      "url": "https://www.instagram.com/viladoartesaocg/"
+    }
+  },
+  {
+    "id": "contato-artesao",
+    "pergunta": "Como entrar em contato com um artesão?",
+    "categoria": "Artesanato e artesãos",
+    "resposta": "Abra o catálogo e procure o artesão. Quando houver contato autorizado e disponível, use o botão individual para iniciar uma conversa pelo WhatsApp. Os números não são exibidos na página.",
+    "provisoria": false,
+    "link": {
+      "texto": "Abrir catálogo de artesãos",
+      "url": "pages/artesaos.html"
+    }
+  }
+]

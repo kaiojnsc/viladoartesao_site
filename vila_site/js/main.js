@@ -1,0 +1,23 @@
+import { renderSharedLayout } from "./components.js";
+import { initNavigation } from "./navigation.js";
+import { initArtisans } from "./artisans.js";
+import { initStories } from "./stories.js";
+import { initEvents } from "./events.js";
+import { initItineraries } from "./itineraries.js";
+import { initReviews } from "./reviews.js";
+import { initMapContainers } from "./map.js";
+import { initFaq } from "./faq.js";
+import { initBooking } from "./booking.js";
+import { initContact } from "./contact.js";
+
+renderSharedLayout();
+initNavigation();
+initArtisans();
+initStories();
+initEvents();
+initItineraries();
+initReviews();
+initMapContainers();
+initFaq();
+initBooking();
+initContact();

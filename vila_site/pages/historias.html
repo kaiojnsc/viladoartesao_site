@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Conheça as trajetórias, técnicas e saberes dos artesãos da Vila do Artesão.">
+    <meta name="theme-color" content="#f8f2e8">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Vila do Artesão">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Histórias que transformam arte em tradição | Vila do Artesão">
+    <meta property="og:description" content="Conheça as trajetórias, técnicas e saberes dos artesãos da Vila do Artesão.">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <title>Histórias que transformam arte em tradição | Vila do Artesão</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/pages/stories.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <script type="module" src="../js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div id="site-header"></div>
+    <main id="conteudo" class="page-content stories-page">
+      <header class="stories-hero">
+        <p class="eyebrow">Memória feita à mão</p>
+        <h1>Histórias que transformam arte em tradição</h1>
+        <p>Os artesãos guardam e renovam conhecimentos que atravessam gerações. Suas trajetórias, técnicas e criações ajudam a contar a cultura de Campina Grande e da região.</p>
+        <p class="stories-hero__note">As histórias serão publicadas com informações confirmadas e autorização de seus protagonistas.</p>
+      </header>
+
+      <section class="stories-section" aria-labelledby="stories-list-title">
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">Conheça os saberes</p>
+          <h2 class="section-heading__title" id="stories-list-title">Histórias da Vila</h2>
+          <p class="section-heading__description">Cada relato começa com quem faz. Os temas abaixo aguardam conteúdo validado; nenhum perfil ou trajetória foi presumido.</p>
+        </div>
+        <p class="stories-status" id="stories-status" role="status" aria-live="polite">Carregando histórias...</p>
+        <div class="story-list" id="story-list"></div>
+        <p class="stories-error alert alert--error" id="stories-error" role="alert" hidden>Não foi possível carregar as histórias agora. Tente novamente mais tarde.</p>
+        <p class="stories-empty" id="stories-empty" hidden>Ainda não há histórias publicadas. Volte em breve para conhecer os relatos dos artesãos.</p>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+  </body>
+</html>

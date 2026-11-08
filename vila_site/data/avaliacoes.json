@@ -1,0 +1,15 @@
+{
+  "videos": [
+    {
+      "id": "yP4YisjJtgg",
+      "titulo": "Vídeo 1 — Vila do Artesão",
+      "descricao": "Primeiro vídeo indicado para a página de avaliações da Vila do Artesão."
+    },
+    {
+      "id": "UHpXhodhrB4",
+      "titulo": "Vídeo 2 — Vila do Artesão",
+      "descricao": "Segundo vídeo indicado para a página de avaliações da Vila do Artesão."
+    }
+  ],
+  "formulario_externo_url": ""
+}

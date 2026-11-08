@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Assista a vídeos sobre a Vila do Artesão e saiba como compartilhar sua experiência como visitante.">
+    <meta name="theme-color" content="#f8f2e8">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Vila do Artesão">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Vídeos e avaliações | Vila do Artesão">
+    <meta property="og:description" content="Assista a vídeos sobre a Vila do Artesão e saiba como compartilhar sua experiência como visitante.">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <title>Vídeos e avaliações | Vila do Artesão</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/pages/reviews.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <script type="module" src="../js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div id="site-header"></div>
+    <main id="conteudo" class="page-content reviews-page">
+      <header class="reviews-hero">
+        <p class="eyebrow">Olhares e experiências</p>
+        <h1>Viva a Vila e compartilhe sua experiência</h1>
+        <p>Assista aos vídeos e, quando o formulário externo estiver disponível, conte como foi sua visita.</p>
+      </header>
+
+      <section class="reviews-section" aria-labelledby="videos-title">
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">A Vila em vídeo</p>
+          <h2 class="section-heading__title" id="videos-title">Conheça outros olhares</h2>
+          <p class="section-heading__description">Os vídeos abaixo foram compartilhados no YouTube. Os títulos e textos podem ser editados no arquivo de dados da página.</p>
+        </div>
+        <p class="reviews-videos-status" id="reviews-videos-status" role="status" aria-live="polite">Carregando vídeos...</p>
+        <div class="review-video-grid" id="review-video-grid"></div>
+        <p class="reviews-error alert alert--error" id="reviews-videos-error" role="alert" hidden>Não foi possível carregar os vídeos agora. Tente novamente mais tarde.</p>
+      </section>
+
+      <section class="reviews-section visitor-feedback" aria-labelledby="visitor-feedback-title">
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">Sua visita também importa</p>
+          <h2 class="section-heading__title" id="visitor-feedback-title">Compartilhe sua avaliação</h2>
+          <p class="section-heading__description">As avaliações serão recebidas por um serviço externo. Nenhuma resposta é armazenada neste site.</p>
+        </div>
+        <div class="review-form-card" id="review-form-area">
+          <p class="review-form-card__notice" id="review-form-notice" role="status" aria-live="polite">
+            O formulário externo ainda está sendo configurado. Os campos abaixo mostram as informações planejadas; eles não recebem nem armazenam respostas.
+          </p>
+          <form class="review-preview-form" aria-label="Prévia dos campos planejados para avaliação">
+            <label class="review-field">
+              <span>Nome <span class="review-field__optional">(opcional)</span></span>
+              <input class="form-field__control" type="text" name="nome" autocomplete="name" disabled>
+            </label>
+            <fieldset class="review-field review-rating">
+              <legend>Avaliação <span class="review-field__required">(de 1 a 5 estrelas)</span></legend>
+              <div class="review-rating__options" aria-label="Opções de avaliação, ainda indisponíveis">
+                <label><input type="radio" name="avaliacao" value="1" aria-label="1 estrela" disabled><span aria-hidden="true">1 ★</span></label>
+                <label><input type="radio" name="avaliacao" value="2" aria-label="2 estrelas" disabled><span aria-hidden="true">2 ★</span></label>
+                <label><input type="radio" name="avaliacao" value="3" aria-label="3 estrelas" disabled><span aria-hidden="true">3 ★</span></label>
+                <label><input type="radio" name="avaliacao" value="4" aria-label="4 estrelas" disabled><span aria-hidden="true">4 ★</span></label>
+                <label><input type="radio" name="avaliacao" value="5" aria-label="5 estrelas" disabled><span aria-hidden="true">5 ★</span></label>
+              </div>
+            </fieldset>
+            <label class="review-field">
+              <span>Comentário</span>
+              <textarea class="form-field__control" name="comentario" rows="4" disabled></textarea>
+            </label>
+            <label class="review-field">
+              <span>Data da visita <span class="review-field__optional">(opcional)</span></span>
+              <input class="form-field__control" type="date" name="data-visita" disabled>
+            </label>
+            <button class="button button--primary review-submit" type="button" disabled>Formulário indisponível</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="reviews-section published-reviews" aria-labelledby="published-reviews-title">
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">Com respeito a cada relato</p>
+          <h2 class="section-heading__title" id="published-reviews-title">Experiências de visitantes</h2>
+          <p class="section-heading__description">Este espaço será atualizado quando houver avaliações reais, autorizadas para publicação.</p>
+        </div>
+        <div class="published-reviews__empty" role="status">
+          <span class="published-reviews__mark" aria-hidden="true">✦</span>
+          <p>Ainda não há avaliações publicadas. Nenhum depoimento foi criado ou armazenado por esta página.</p>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+  </body>
+</html>

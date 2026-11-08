@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tire dúvidas sobre a localização, o artesanato e como encontrar artesãos na Vila do Artesão.">
+    <meta name="theme-color" content="#f8f2e8">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Vila do Artesão">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Perguntas frequentes | Vila do Artesão">
+    <meta property="og:description" content="Tire dúvidas sobre a localização, o artesanato e como encontrar artesãos na Vila do Artesão.">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <title>Perguntas frequentes | Vila do Artesão</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/pages/faq.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <script type="module" src="../js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div id="site-header"></div>
+    <main id="conteudo" class="page-content faq-page">
+      <header class="faq-hero">
+        <p class="eyebrow">Estamos aqui para ajudar</p>
+        <h1>Perguntas frequentes</h1>
+        <p>Encontre orientações sobre a Vila, os artesãos e como planejar sua visita.</p>
+      </header>
+
+      <section class="faq-section" aria-labelledby="faq-section-title">
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">Respostas rápidas</p>
+          <h2 class="section-heading__title" id="faq-section-title">Como podemos ajudar?</h2>
+          <p class="section-heading__description">Pesquise uma dúvida ou abra uma pergunta para consultar a resposta.</p>
+        </div>
+
+        <div class="faq-search">
+          <label class="faq-search__label" for="faq-search-input">Buscar perguntas frequentes</label>
+          <div class="faq-search__control">
+            <input class="form-field__control" id="faq-search-input" type="search" autocomplete="off" placeholder="Ex.: localização, chalés ou artesanato">
+            <button class="faq-search__clear" id="faq-search-clear" type="button" aria-label="Limpar busca">Limpar</button>
+          </div>
+        </div>
+
+        <p class="faq-results-status" id="faq-results-status" role="status" aria-live="polite">Carregando perguntas...</p>
+        <div class="faq-categories" id="faq-categories"></div>
+        <p class="faq-empty-state" id="faq-empty-state" hidden>Nenhuma pergunta encontrada. Tente buscar com outras palavras.</p>
+        <p class="faq-error alert alert--error" id="faq-error" role="alert" hidden>Não foi possível carregar as perguntas agora. Tente novamente mais tarde.</p>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+  </body>
+</html>

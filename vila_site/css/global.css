@@ -1,0 +1,129 @@
+body {
+  min-width: 18rem;
+  background-color: var(--color-cotton);
+  background-image: radial-gradient(rgb(117 69 47 / 4%) 0.6px, transparent 0.6px);
+  background-size: 7px 7px;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--font-size-md);
+  font-weight: 400;
+  line-height: var(--line-height-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-coffee);
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: var(--line-height-heading);
+}
+
+h1 {
+  font-size: var(--font-size-3xl);
+}
+
+h2 {
+  font-size: var(--font-size-2xl);
+}
+
+h3 {
+  font-size: var(--font-size-xl);
+}
+
+p + p {
+  margin-top: var(--space-4);
+}
+
+a {
+  color: var(--color-leather);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-coffee);
+}
+
+:focus-visible {
+  outline: var(--border-width-strong) solid var(--color-coffee);
+  outline-offset: 3px;
+  box-shadow: var(--shadow-focus);
+}
+
+::selection {
+  background: var(--color-mustard);
+  color: var(--color-coffee);
+}
+
+.page-content {
+  width: min(100% - 2 * var(--space-page), var(--content-width));
+  min-height: 55vh;
+  margin-inline: auto;
+  padding-block: var(--space-12);
+}
+
+.intro {
+  position: relative;
+  max-width: 48rem;
+  margin: var(--space-12) auto;
+  padding: clamp(var(--space-6), 6vw, var(--space-12));
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-warm-white);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.intro::before {
+  position: absolute;
+  inset: 0.55rem;
+  border: 1px dashed rgb(117 69 47 / 22%);
+  border-radius: calc(var(--radius-lg) - 0.25rem);
+  content: "";
+  pointer-events: none;
+}
+
+.intro > * {
+  position: relative;
+}
+
+.intro h1 {
+  margin-block: var(--space-2) var(--space-4);
+  color: var(--color-leather);
+  font-size: var(--font-size-3xl);
+}
+
+.intro > p:not(.eyebrow) {
+  max-width: 38rem;
+  margin-inline: auto;
+  color: var(--color-text-muted);
+  font-size: clamp(var(--font-size-md), 2vw, var(--font-size-lg));
+}
+
+.eyebrow {
+  color: var(--color-olive);
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.skip-link {
+  position: absolute;
+  z-index: 10;
+  top: var(--space-2);
+  left: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  transform: translateY(-150%);
+  border-radius: var(--radius-sm);
+  background: var(--color-warm-white);
+  color: var(--color-coffee);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}

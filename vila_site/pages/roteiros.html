@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sugestões para conhecer a Vila do Artesão e explorar experiências culturais em Campina Grande.">
+    <meta name="theme-color" content="#f8f2e8">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Vila do Artesão">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Roteiros e experiências | Vila do Artesão">
+    <meta property="og:description" content="Sugestões para conhecer a Vila do Artesão e explorar experiências culturais em Campina Grande.">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <title>Roteiros e experiências | Vila do Artesão</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/pages/itineraries.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <script type="module" src="../js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div id="site-header"></div>
+    <main id="conteudo" class="page-content itineraries-page">
+      <header class="itineraries-hero">
+        <p class="eyebrow">Descubra Campina Grande</p>
+        <h1>Roteiros para viver a cultura de perto</h1>
+        <p>Ideias para conhecer a Vila do Artesão e se aproximar do artesanato, da cultura e dos sabores da região.</p>
+        <p class="itineraries-hero__note">São sugestões em preparação, não passeios organizados. Detalhes serão acrescentados após confirmação.</p>
+      </header>
+
+      <section class="itineraries-section" aria-labelledby="itineraries-title">
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">Inspire sua próxima visita</p>
+          <h2 class="section-heading__title" id="itineraries-title">Escolha uma experiência</h2>
+          <p class="section-heading__description">Cada proposta poderá receber pontos de visitação e informações turísticas quando forem confirmados.</p>
+        </div>
+        <p class="itineraries-status" id="itineraries-status" role="status" aria-live="polite">Carregando sugestões...</p>
+        <div class="itinerary-grid" id="itinerary-grid"></div>
+        <p class="itineraries-empty" id="itineraries-empty" hidden>Ainda não há sugestões de roteiro cadastradas.</p>
+        <p class="itineraries-error alert alert--error" id="itineraries-error" role="alert" hidden>Não foi possível carregar as sugestões agora. Tente novamente mais tarde.</p>
+      </section>
+
+      <section class="itineraries-map-note" aria-labelledby="map-integration-title">
+        <div class="itineraries-map-note__mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" focusable="false">
+            <path d="M24 43s15-14.2 15-26A15 15 0 0 0 9 17c0 11.8 15 26 15 26Z"></path>
+            <circle cx="24" cy="17" r="5"></circle>
+          </svg>
+        </div>
+        <div>
+          <p class="section-heading__eyebrow">Uma próxima etapa</p>
+          <h2 id="map-integration-title">Mapas e informações verificadas</h2>
+          <p>Os roteiros poderão incluir paradas, endereços, horários e distâncias, além de integração com mapas interativos, após validação das informações.</p>
+        </div>
+        <a class="button button--secondary" href="https://maps.app.goo.gl/HLXZMhie1bfWJQSa8" target="_blank" rel="noopener noreferrer">Ver localização da Vila</a>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+  </body>
+</html>

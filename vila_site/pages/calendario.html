@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Acompanhe datas comemorativas, eventos culturais e oportunidades da Vila do Artesão.">
+    <meta name="theme-color" content="#f8f2e8">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Vila do Artesão">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Calendário de eventos | Vila do Artesão">
+    <meta property="og:description" content="Acompanhe datas comemorativas, eventos culturais e oportunidades da Vila do Artesão.">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <title>Calendário de eventos | Vila do Artesão</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/pages/calendar.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <script type="module" src="../js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div id="site-header"></div>
+    <main id="conteudo" class="page-content calendar-page">
+      <header class="calendar-hero">
+        <p class="eyebrow">Cultura, encontros e criação</p>
+        <h1>Calendário da Vila</h1>
+        <p>Acompanhe as datas comemorativas, feiras e eventos culturais ligados ao artesanato e à vida da Vila.</p>
+        <p class="calendar-hero__note">A programação será publicada quando datas e informações forem confirmadas pela organização.</p>
+        <span class="calendar-hero__pennants" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+      </header>
+
+      <section class="calendar-overview" aria-labelledby="annual-calendar-title">
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">Planeje ao longo do ano</p>
+          <h2 class="section-heading__title" id="annual-calendar-title">Calendário visual</h2>
+          <p class="section-heading__description">Selecione um mês para consultar a programação. Nenhuma data foi anunciada nesta versão.</p>
+        </div>
+        <div class="month-grid" id="calendar-months" role="group" aria-label="Filtrar programação por mês"></div>
+        <p class="calendar-selection-status" id="calendar-selection-status" aria-live="polite"></p>
+      </section>
+
+      <section class="calendar-program" aria-labelledby="events-title">
+        <div class="calendar-program__heading">
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">Fique por dentro</p>
+            <h2 class="section-heading__title" id="events-title">Eventos e temas da programação</h2>
+            <p class="section-heading__description">Os temas abaixo são categorias editoriais para futuras divulgações, não eventos confirmados.</p>
+          </div>
+          <label class="calendar-category-control" for="calendar-category">
+            <span>Categoria</span>
+            <select class="form-field__control" id="calendar-category">
+              <option value="">Todas as categorias</option>
+            </select>
+          </label>
+        </div>
+        <p class="calendar-results-status" id="calendar-results-status" role="status" aria-live="polite">Carregando programação...</p>
+        <div class="event-card-grid" id="event-card-grid"></div>
+        <p class="calendar-empty-state" id="calendar-empty-state" hidden>Nenhuma data confirmada para este período. Consulte novamente em breve.</p>
+        <p class="calendar-error alert alert--error" id="calendar-error" role="alert" hidden>Não foi possível carregar a programação agora. Tente novamente mais tarde.</p>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+  </body>
+</html>

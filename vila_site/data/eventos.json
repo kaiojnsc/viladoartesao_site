@@ -1,0 +1,68 @@
+[
+  {
+    "id": "sao-joao",
+    "nome": "",
+    "data": "",
+    "descricao": "",
+    "imagem": "",
+    "categoria": "São João",
+    "informacoes_adicionais": "",
+    "saiba_mais_url": "",
+    "status": "a_definir"
+  },
+  {
+    "id": "natal",
+    "nome": "",
+    "data": "",
+    "descricao": "",
+    "imagem": "",
+    "categoria": "Natal",
+    "informacoes_adicionais": "",
+    "saiba_mais_url": "",
+    "status": "a_definir"
+  },
+  {
+    "id": "dia-do-artesao",
+    "nome": "",
+    "data": "",
+    "descricao": "",
+    "imagem": "",
+    "categoria": "Dia do Artesão",
+    "informacoes_adicionais": "",
+    "saiba_mais_url": "",
+    "status": "a_definir"
+  },
+  {
+    "id": "datas-comemorativas",
+    "nome": "",
+    "data": "",
+    "descricao": "",
+    "imagem": "",
+    "categoria": "Datas comemorativas",
+    "informacoes_adicionais": "",
+    "saiba_mais_url": "",
+    "status": "a_definir"
+  },
+  {
+    "id": "feiras-e-exposicoes",
+    "nome": "",
+    "data": "",
+    "descricao": "",
+    "imagem": "",
+    "categoria": "Feiras e exposições",
+    "informacoes_adicionais": "",
+    "saiba_mais_url": "",
+    "status": "a_definir"
+  },
+  {
+    "id": "eventos-especiais",
+    "nome": "",
+    "data": "",
+    "descricao": "",
+    "imagem": "",
+    "categoria": "Eventos especiais",
+    "informacoes_adicionais": "",
+    "saiba_mais_url": "",
+    "status": "a_definir"
+  }
+]

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Envie uma solicitação de interesse para visitar a Vila do Artesão de Campina Grande.">
+    <meta name="theme-color" content="#f8f2e8">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Vila do Artesão">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Solicite uma visita | Vila do Artesão">
+    <meta property="og:description" content="Envie uma solicitação de interesse para visitar a Vila do Artesão de Campina Grande.">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <title>Solicite uma visita | Vila do Artesão</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/pages/booking.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <script type="module" src="../js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div id="site-header"></div>
+    <main id="conteudo" class="page-content booking-page">
+      <header class="booking-hero">
+        <p class="eyebrow">Planeje sua visita</p>
+        <h1>Solicite uma visita à Vila do Artesão</h1>
+        <p>Conte um pouco sobre a visita que você gostaria de fazer. O envio é uma solicitação de interesse, não uma confirmação de agendamento.</p>
+      </header>
+
+      <section class="booking-section" aria-labelledby="booking-form-title">
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">Vamos conversar</p>
+          <h2 class="section-heading__title" id="booking-form-title">Dados para sua solicitação</h2>
+          <p class="section-heading__description">Os campos com asterisco são obrigatórios. Informe um telefone com DDD para que a equipe possa retornar.</p>
+        </div>
+
+        <div class="booking-form-card">
+          <p class="booking-setup-notice alert alert--warning" id="booking-setup-notice" role="status" aria-live="polite">
+            O formulário de envio ainda está sendo configurado. Nenhum dado será transmitido ou armazenado por esta página.
+          </p>
+          <p class="booking-status" id="booking-status" role="status" aria-live="polite"></p>
+          <form id="booking-form" class="booking-form" novalidate>
+            <fieldset id="booking-fields" class="booking-fields" disabled aria-describedby="booking-setup-notice">
+              <div class="booking-form__grid">
+                <div class="form-field">
+                  <label class="form-field__label" for="booking-name">Nome do responsável <span aria-hidden="true">*</span></label>
+                  <input class="form-field__control" id="booking-name" name="nome" type="text" autocomplete="name" maxlength="120" required aria-describedby="booking-name-error">
+                  <span class="form-field__error" id="booking-name-error"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-field__label" for="booking-email">E-mail <span aria-hidden="true">*</span></label>
+                  <input class="form-field__control" id="booking-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required aria-describedby="booking-email-error">
+                  <span class="form-field__error" id="booking-email-error"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-field__label" for="booking-phone">Telefone para contato <span aria-hidden="true">*</span></label>
+                  <input class="form-field__control" id="booking-phone" name="telefone" type="tel" autocomplete="tel-national" inputmode="tel" placeholder="(DDD) 99999-9999" maxlength="20" required aria-describedby="booking-phone-hint booking-phone-error">
+                  <span class="form-field__hint" id="booking-phone-hint">Informe DDD e número nacional (10 ou 11 dígitos), sem código de país. Nenhum DDD será presumido.</span>
+                  <span class="form-field__error" id="booking-phone-error"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-field__label" for="booking-date">Data desejada <span aria-hidden="true">*</span></label>
+                  <input class="form-field__control" id="booking-date" name="data_desejada" type="date" required aria-describedby="booking-date-hint booking-date-error">
+                  <span class="form-field__hint" id="booking-date-hint">A data desejada não confirma a disponibilidade da visita.</span>
+                  <span class="form-field__error" id="booking-date-error"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-field__label" for="booking-count">Quantidade de visitantes <span aria-hidden="true">*</span></label>
+                  <input class="form-field__control" id="booking-count" name="quantidade_visitantes" type="number" min="1" step="1" inputmode="numeric" required aria-describedby="booking-count-error">
+                  <span class="form-field__error" id="booking-count-error"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-field__label" for="booking-type">Tipo de visita <span aria-hidden="true">*</span></label>
+                  <select class="form-field__control" id="booking-type" name="tipo_visita" required aria-describedby="booking-type-error">
+                    <option value="">Selecione uma opção</option>
+                    <option value="individual">Visita individual</option>
+                    <option value="familia">Visita em família</option>
+                    <option value="grupo">Visita em grupo</option>
+                    <option value="escolar">Visita escolar</option>
+                    <option value="institucional">Visita institucional</option>
+                  </select>
+                  <span class="form-field__error" id="booking-type-error"></span>
+                </div>
+
+                <div class="form-field booking-form__observations">
+                  <label class="form-field__label" for="booking-notes">Observações adicionais <span class="booking-form__optional">(opcional)</span></label>
+                  <textarea class="form-field__control" id="booking-notes" name="observacoes" rows="4" maxlength="1000" aria-describedby="booking-notes-hint"></textarea>
+                  <span class="form-field__hint" id="booking-notes-hint">Não inclua dados pessoais sensíveis que não sejam necessários para tratar sua solicitação.</span>
+                </div>
+              </div>
+
+              <label class="booking-consent" for="booking-consent">
+                <input id="booking-consent" name="consentimento_privacidade" type="checkbox" required aria-describedby="booking-consent-error">
+                <span>Li o <a href="privacidade.html" target="_blank" rel="noopener noreferrer">aviso de privacidade</a> e concordo com o uso dos dados informados para análise e retorno sobre esta solicitação.</span>
+              </label>
+              <span class="form-field__error booking-consent__error" id="booking-consent-error"></span>
+
+              <button class="button button--primary booking-submit" id="booking-submit" type="submit" disabled>Enviar solicitação de visita</button>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+  </body>
+</html>
