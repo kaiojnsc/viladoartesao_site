@@ -127,3 +127,37 @@ a:hover {
 .skip-link:focus {
   transform: translateY(0);
 }
+
+.about-page > section + section {
+  margin-top: var(--space-10);
+}
+
+.about-page > section h2 {
+  margin-bottom: var(--space-3);
+}
+
+.about-page > section p + p {
+  margin-top: var(--space-3);
+}
+
+.about-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.about-page__actions .button {
+  margin-top: 0;
+}
+
+.about-page > .alert {
+  margin-top: var(--space-10);
+}
+
+@media (max-width: 36rem) {
+  .about-page__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

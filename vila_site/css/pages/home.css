@@ -174,6 +174,248 @@
   font-size: var(--font-size-xs);
 }
 
+.hero-illustration > img {
+  position: relative;
+  width: min(80%, 19rem);
+  height: clamp(13rem, 27vw, 21rem);
+  object-fit: contain;
+}
+
+.hero-illustration figcaption {
+  position: relative;
+}
+
+.artisan-preview {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(var(--space-6), 6vw, var(--space-12));
+  max-width: 58rem;
+  margin-inline: auto;
+  padding: clamp(var(--space-5), 5vw, var(--space-10));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-warm-white);
+  box-shadow: var(--shadow-card);
+}
+
+.artisan-preview__portrait {
+  display: grid;
+  min-height: 16rem;
+  align-content: center;
+  justify-items: center;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-cotton);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.artisan-preview__portrait > span {
+  display: grid;
+  width: 4rem;
+  height: 4rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-warm-white);
+  color: var(--color-leather);
+}
+
+.artisan-preview__portrait svg {
+  width: 2rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.artisan-preview__portrait p,
+.artisan-preview__details > p:not(.eyebrow) {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.artisan-preview__details h3 {
+  margin-top: var(--space-2);
+}
+
+.artisan-preview__details dl {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.artisan-preview__details dl > div {
+  display: grid;
+  grid-template-columns: minmax(6rem, 0.35fr) minmax(0, 1fr);
+  gap: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.artisan-preview__details dt {
+  color: var(--color-coffee);
+  font-weight: 850;
+}
+
+.artisan-preview__details dd {
+  color: var(--color-text-muted);
+}
+
+.artisan-preview__details > p:not(.eyebrow) {
+  margin-top: var(--space-4);
+}
+
+.home-gallery {
+  background: var(--color-cotton);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.gallery-slot {
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-warm-white);
+}
+
+.gallery-slot__visual {
+  display: grid;
+  min-height: 10rem;
+  place-items: center;
+  border-bottom: 1px solid var(--color-border);
+  background:
+    linear-gradient(135deg, rgb(217 166 46 / 8%), transparent 58%),
+    var(--color-warm-white);
+  color: var(--color-border-strong);
+}
+
+.gallery-slot__visual svg {
+  width: 3rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.2;
+}
+
+.gallery-slot figcaption {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-4);
+}
+
+.gallery-slot figcaption strong {
+  color: var(--color-coffee);
+  font-family: var(--font-display);
+  font-size: var(--font-size-md);
+}
+
+.gallery-slot figcaption span {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.home-editorial {
+  background: var(--color-warm-white);
+}
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.editorial-topic {
+  padding-top: var(--space-4);
+  border-top: 2px solid var(--color-terracotta);
+}
+
+.editorial-topic:nth-child(2) {
+  border-top-color: var(--color-olive);
+}
+
+.editorial-topic:nth-child(3) {
+  border-top-color: var(--color-mustard);
+}
+
+.editorial-topic:nth-child(4) {
+  border-top-color: var(--color-leather);
+}
+
+.editorial-topic h3 {
+  font-size: var(--font-size-lg);
+}
+
+.editorial-topic p {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.home-editorial > .home-container > .text-link {
+  margin-top: var(--space-6);
+}
+
+.visit-facts {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+  color: #f4e9dc;
+  font-size: var(--font-size-sm);
+}
+
+.visit-facts li {
+  padding-top: var(--space-3);
+  border-top: 1px solid rgb(255 252 247 / 25%);
+}
+
+.visit-facts strong {
+  color: var(--color-warm-white);
+}
+
+.home-reviews {
+  background: var(--color-warm-white);
+}
+
+.home-reviews__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  padding: clamp(var(--space-5), 4vw, var(--space-8));
+  border: 1px solid var(--color-border);
+  border-left: 0.35rem solid var(--color-olive);
+  border-radius: var(--radius-md);
+  background: var(--color-cotton);
+}
+
+.home-reviews__inner > div {
+  max-width: 42rem;
+}
+
+.home-reviews__inner h2 {
+  margin-top: var(--space-2);
+}
+
+.home-reviews__inner p:not(.section-heading__eyebrow) {
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.home-reviews__inner .button {
+  flex: 0 0 auto;
+  margin-top: 0;
+}
+
 .home-hero__pennants {
   position: absolute;
   right: 0;
@@ -558,7 +800,8 @@
 
 @media (max-width: 62rem) {
   .segment-grid,
-  .highlight-grid {
+  .highlight-grid,
+  .editorial-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -589,6 +832,18 @@
 
   .visitor-experience__layout {
     gap: var(--space-8);
+  }
+
+  .artisan-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .artisan-preview__portrait {
+    min-height: 12rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .mascot-card {
@@ -624,8 +879,19 @@
   }
 
   .segment-grid,
-  .highlight-grid {
+  .highlight-grid,
+  .editorial-grid,
+  .gallery-grid {
     grid-template-columns: 1fr;
+  }
+
+  .home-reviews__inner {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .home-reviews__inner .button {
+    width: 100%;
   }
 
   .segment-card {

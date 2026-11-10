@@ -34,6 +34,7 @@ Mais detalhes: [`docs/estrutura.md`](docs/estrutura.md).
 - **Artesãos:** altere `data/artesaos.json`, preservando cada registro e os campos de origem. Consulte [`docs/artesaos.md`](docs/artesaos.md).
 - **Eventos:** altere `data/eventos.json`; só use datas e informações confirmadas. Consulte [`docs/calendario.md`](docs/calendario.md).
 - **Histórias:** inclua registros em `data/historias.json`, com relatos e imagens autorizados. Consulte [`docs/historias.md`](docs/historias.md).
+- **Página inicial:** os segmentos exibidos seguem as categorias do recadastramento disponibilizado ao projeto. Perfis, galeria, conteúdos editoriais e depoimentos permanecem como espaços de preparação até que existam dados, fotografias e autorizações confirmados.
 - **Mapa:** coloque o arquivo em `assets/mapa/` e atualize os atributos do componente em `pages/mapa.html`. Consulte [`docs/mapa.md`](docs/mapa.md).
 - **Telefone/WhatsApp oficial:** atualize `data/contato.json` somente após confirmação. Consulte [`docs/contato.md`](docs/contato.md).
 - **Agendamento:** configure o endpoint e a aprovação do aviso antes de ativar o envio. Consulte [`docs/agendamento.md`](docs/agendamento.md).
