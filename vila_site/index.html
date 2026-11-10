@@ -156,29 +156,78 @@
           <header class="section-heading">
             <p class="section-heading__eyebrow">Um passeio pelos espaços</p>
             <h2 class="section-heading__title" id="gallery-title">Conheça a Vila por dentro</h2>
-            <p class="section-heading__description">A galeria está preparada para receber fotografias oficiais. Nenhuma imagem de outro local será usada para representar a Vila.</p>
+            <p class="section-heading__description">A galeria está pronta para receber suas imagens oficiais. Substitua cada imagem e descrição pelo conteúdo que quiser publicar.</p>
           </header>
-          <div class="gallery-grid">
-            <figure class="gallery-slot">
-              <div class="gallery-slot__visual" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><rect x="5" y="8" width="38" height="32" rx="2"></rect><circle cx="17" cy="19" r="3"></circle><path d="m8 36 11-11 7 7 5-5 9 9"></path></svg></div>
-              <figcaption><strong>Fachada</strong><span>Foto oficial aguardando envio</span></figcaption>
-            </figure>
-            <figure class="gallery-slot">
-              <div class="gallery-slot__visual" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><rect x="5" y="8" width="38" height="32" rx="2"></rect><circle cx="17" cy="19" r="3"></circle><path d="m8 36 11-11 7 7 5-5 9 9"></path></svg></div>
-              <figcaption><strong>Corredores</strong><span>Foto oficial aguardando envio</span></figcaption>
-            </figure>
-            <figure class="gallery-slot">
-              <div class="gallery-slot__visual" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><rect x="5" y="8" width="38" height="32" rx="2"></rect><circle cx="17" cy="19" r="3"></circle><path d="m8 36 11-11 7 7 5-5 9 9"></path></svg></div>
-              <figcaption><strong>Chalés</strong><span>Foto oficial aguardando envio</span></figcaption>
-            </figure>
-            <figure class="gallery-slot">
-              <div class="gallery-slot__visual" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><rect x="5" y="8" width="38" height="32" rx="2"></rect><circle cx="17" cy="19" r="3"></circle><path d="m8 36 11-11 7 7 5-5 9 9"></path></svg></div>
-              <figcaption><strong>Produtos artesanais</strong><span>Foto autorizada aguardando envio</span></figcaption>
-            </figure>
-            <figure class="gallery-slot">
-              <div class="gallery-slot__visual" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><rect x="5" y="8" width="38" height="32" rx="2"></rect><circle cx="17" cy="19" r="3"></circle><path d="m8 36 11-11 7 7 5-5 9 9"></path></svg></div>
-              <figcaption><strong>Artesãos trabalhando</strong><span>Foto autorizada aguardando envio</span></figcaption>
-            </figure>
+
+          <div class="gallery-grid" aria-label="Galeria da Vila do Artesão">
+            <button class="gallery-slot" type="button" data-gallery-item data-image="imagens_viladoartesao/entrada.webp" data-title="Fachada" data-description="Descreva aqui a fachada da Vila e o contexto da imagem." data-alt="Fachada da Vila do Artesão">
+              <span class="gallery-slot__visual">
+                <img src="imagens_viladoartesao/entrada.webp" alt="Fachada da Vila do Artesão" loading="lazy" decoding="async">
+                
+              </span>
+              <span class="gallery-slot__caption">
+                <strong>Fachada</strong>
+               
+              </span>
+            </button>
+
+            <button class="gallery-slot" type="button" data-gallery-item data-image="imagens_viladoartesao/folia_na_vila.webp" data-title="Corredores" data-description="Descreva aqui os corredores e a circulação do espaço." data-alt="Corredores da Vila do Artesão">
+              <span class="gallery-slot__visual">
+                <img src="imagens_viladoartesao/entrada_sao_joao..webp" alt="Corredores da Vila do Artesão" loading="lazy" decoding="async">
+                
+              </span>
+              <span class="gallery-slot__caption">
+                <strong>Corredores</strong>
+                
+              </span>
+            </button>
+
+            <button class="gallery-slot" type="button" data-gallery-item data-image="imagens_viladoartesao/entrada_sao_joao2.webp" data-title="Chalés" data-description="Descreva aqui os chalés e o ambiente do espaço artesanal." data-alt="Chalés da Vila do Artesão">
+              <span class="gallery-slot__visual">
+                <img src="" alt="Chalés da Vila do Artesão" loading="lazy" decoding="async">
+                
+              </span>
+              <span class="gallery-slot__caption">
+                <strong>Chalés</strong>
+                
+              </span>
+            </button>
+
+            <button class="gallery-slot" type="button" data-gallery-item data-image="" data-title="Produtos artesanais" data-description="Descreva aqui os produtos artesanais e os detalhes das peças." data-alt="Produtos artesanais da Vila do Artesão">
+              <span class="gallery-slot__visual">
+                <img src="" alt="Produtos artesanais da Vila do Artesão" loading="lazy" decoding="async">
+                
+              </span>
+              <span class="gallery-slot__caption">
+                <strong>Produtos artesanais</strong>
+                
+              </span>
+            </button>
+
+            <button class="gallery-slot" type="button" data-gallery-item data-image="imagens_viladoartesao/artesas_tricotando.webp" data-title="Artesãos trabalhando" data-description="Descreva aqui o momento do trabalho artesanal e o ofício em ação." data-alt="Artesãos trabalhando na Vila do Artesão">
+              <span class="gallery-slot__visual">
+                <img src="imagens_viladoartesao/artesas_tricotando.webp" alt="Artesãos trabalhando na Vila do Artesão" loading="lazy" decoding="async">
+                
+              </span>
+              <span class="gallery-slot__caption">
+                <strong>Artesãos trabalhando</strong>
+                
+              </span>
+            </button>
+          </div>
+
+          <div class="gallery-modal" id="home-gallery-modal" aria-hidden="true">
+            <div class="gallery-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title">
+              <button class="gallery-modal__close" type="button" aria-label="Fechar imagem">×</button>
+              <div class="gallery-modal__media">
+                <img id="gallery-modal-image" src="" alt="">
+              </div>
+              <div class="gallery-modal__content">
+                <p class="section-heading__eyebrow">Detalhe do espaço</p>
+                <h3 id="gallery-modal-title">Título</h3>
+                <p id="gallery-modal-description">Descrição</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

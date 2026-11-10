@@ -22,6 +22,136 @@
     <link rel="stylesheet" href="../css/components.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/accessibility.css">
+    <style>
+      .about-gallery {
+        margin-top: 3rem;
+        padding: 1.5rem 0 0;
+      }
+
+      .about-gallery__head {
+        margin-bottom: 1.25rem;
+      }
+
+      .about-gallery__head h2 {
+        margin-bottom: 0.5rem;
+      }
+
+      .about-gallery__carousel {
+        position: relative;
+        max-width: 72rem;
+        margin: 0 auto;
+      }
+
+      .about-gallery__track {
+        position: relative;
+        overflow: hidden;
+        border-radius: 1.25rem;
+        background: #f7efe7;
+        border: 1px solid rgba(74, 55, 35, 0.12);
+        box-shadow: 0 18px 45px rgba(45, 31, 17, 0.08);
+      }
+
+      .about-gallery__slide {
+        display: none;
+        width: 100%;
+        background: #f7efe7;
+      }
+
+      .about-gallery__slide.is-active {
+        display: block;
+      }
+
+      .about-gallery__slide img {
+        display: block;
+        width: 100%;
+        height: clamp(18rem, 35vw, 34rem);
+        object-fit: contain;
+        object-position: center;
+        background: #f7efe7;
+      }
+
+      .about-gallery__nav {
+        position: absolute;
+        top: 50%;
+        z-index: 2;
+        transform: translateY(-50%);
+        width: 2.8rem;
+        height: 2.8rem;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(30, 22, 15, 0.7);
+        color: #fff;
+        font-size: 1.8rem;
+        line-height: 1;
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.2s ease;
+      }
+
+      .about-gallery__nav:hover,
+      .about-gallery__nav:focus-visible {
+        background: rgba(30, 22, 15, 0.88);
+        transform: translateY(-50%) scale(1.05);
+      }
+
+      .about-gallery__nav--prev {
+        left: 1rem;
+      }
+
+      .about-gallery__nav--next {
+        right: 1rem;
+      }
+
+      .about-gallery__dots {
+        display: flex;
+        justify-content: center;
+        gap: 0.55rem;
+        margin-top: 1rem;
+      }
+
+      .about-gallery__dot {
+        width: 0.7rem;
+        height: 0.7rem;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(89, 67, 49, 0.28);
+        cursor: pointer;
+        transition: transform 0.2s ease, background 0.2s ease;
+      }
+
+      .about-gallery__dot.is-active {
+        background: #a15d32;
+        transform: scale(1.15);
+      }
+
+      @media (max-width: 48rem) {
+        .about-gallery {
+          margin-top: 2.25rem;
+        }
+
+        .about-gallery__carousel {
+          max-width: 100%;
+        }
+
+        .about-gallery__slide img {
+          height: 18rem;
+          object-fit: contain;
+        }
+
+        .about-gallery__nav {
+          width: 2.4rem;
+          height: 2.4rem;
+          font-size: 1.5rem;
+        }
+
+        .about-gallery__nav--prev {
+          left: 0.5rem;
+        }
+
+        .about-gallery__nav--next {
+          right: 0.5rem;
+        }
+      }
+    </style>
     <script type="module" src="../js/main.js"></script>
   </head>
   <body>
@@ -40,6 +170,55 @@
         <p>As informações desta página são intencionalmente cuidadosas: detalhes históricos, datas e outras informações institucionais serão incluídos após confirmação pela equipe responsável.</p>
       </section>
 
+      <section class="about-gallery" aria-labelledby="about-gallery-title">
+        <div class="about-gallery__head">
+          <h2 id="about-gallery-title">Um passeio pela Vila</h2>
+          <p>Imagens do espaço, da cultura e do artesanato que marcam a identidade da Vila do Artesão.</p>
+        </div>
+
+        <div class="about-gallery__carousel" data-gallery-carousel>
+          <button class="about-gallery__nav about-gallery__nav--prev" type="button" aria-label="Imagem anterior">&#8249;</button>
+          <div class="about-gallery__track" aria-live="polite">
+            <div class="about-gallery__slide is-active"><img src="../imagens_viladoartesao/3_do_nordeste.webp" alt="Imagem da Vila do Artesão destacando o artesanato e a cultura regional"></div>
+            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/artesas_tricotando.webp" alt="Artesãs trabalhando manualmente na Vila do Artesão"></div>
+            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/cantata_de_natal.webp" alt="Cantata de Natal na Vila do Artesão"></div>
+            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/entrada.webp" alt="Entrada principal da Vila do Artesão"></div>
+            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/entrada_sao_joao..webp" alt="Entrada da Vila em época de São João"></div>
+            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/entrada_sao_joao2.webp" alt="Outra visão da entrada da Vila durante a festa de São João"></div>
+            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/epoca_sao_joao.webp" alt="Momentos de São João na Vila do Artesão"></div>
+            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/fogueira_sao_joao.webp" alt="Fogueira e celebrações de São João na Vila"></div>
+            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/folia_na_vila.webp" alt="Folia e movimento cultural na Vila do Artesão"></div>
+            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/musica_na_vila.webp" alt="Música e cultura em evento da Vila"></div>
+            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/palestra.webp" alt="Palestra e momentos de conhecimento na Vila"></div>
+            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/palestra_natal.webp" alt="Palestra temática de Natal na Vila"></div>
+            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/papai_noel.webp" alt="Papai Noel e celebração na Vila do Artesão"></div>
+            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/quadrilha_na_vila.webp" alt="Quadrilha e cultura popular na Vila do Artesão"></div>
+            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/santos.webp" alt="Representação de santos e celebrações na Vila"></div>
+            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/santos_natal.webp" alt="Santos e celebrações de Natal na Vila"></div>
+          </div>
+          <button class="about-gallery__nav about-gallery__nav--next" type="button" aria-label="Próxima imagem">&#8250;</button>
+        </div>
+
+        <div class="about-gallery__dots" aria-label="Navegação por imagens">
+          <button class="about-gallery__dot is-active" type="button" aria-label="Ir para a imagem 1"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 2"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 3"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 4"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 5"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 6"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 7"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 8"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 9"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 10"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 11"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 12"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 13"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 14"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 15"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 16"></button>
+        </div>
+      </section>
+
       <section aria-labelledby="about-project-title">
         <h2 id="about-project-title">Sobre este projeto</h2>
         <p>O site é um projeto de extensão universitária da UNIFACISA, desenvolvido em parceria com a Vila do Artesão e a Casa do Empreendedor.</p>
@@ -55,5 +234,41 @@
       </aside>
     </main>
     <div id="site-footer"></div>
+
+    <script>
+      (() => {
+        const carousel = document.querySelector('[data-gallery-carousel]');
+        if (!carousel) return;
+
+        const slides = Array.from(carousel.querySelectorAll('.about-gallery__slide'));
+        const dots = Array.from(document.querySelectorAll('.about-gallery__dot'));
+        const prevButton = carousel.querySelector('.about-gallery__nav--prev');
+        const nextButton = carousel.querySelector('.about-gallery__nav--next');
+
+        let currentIndex = 0;
+
+        const showSlide = (index) => {
+          currentIndex = (index + slides.length) % slides.length;
+
+          slides.forEach((slide, i) => {
+            slide.classList.toggle('is-active', i === currentIndex);
+          });
+
+          dots.forEach((dot, i) => {
+            dot.classList.toggle('is-active', i === currentIndex);
+            dot.setAttribute('aria-current', i === currentIndex ? 'true' : 'false');
+          });
+        };
+
+        prevButton?.addEventListener('click', () => showSlide(currentIndex - 1));
+        nextButton?.addEventListener('click', () => showSlide(currentIndex + 1));
+
+        dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => showSlide(index));
+        });
+
+        setInterval(() => showSlide(currentIndex + 1), 5000);
+      })();
+    </script>
   </body>
 </html>
