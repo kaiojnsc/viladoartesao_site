@@ -98,6 +98,24 @@
   object-fit: cover;
 }
 
+.story-entry__media--video {
+  min-height: 0;
+  padding: var(--space-3);
+}
+
+.story-entry__media--video::before {
+  display: none;
+}
+
+.story-entry__video {
+  width: 100%;
+  max-width: 24rem;
+  height: 36rem;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-warm-white);
+}
+
 .story-entry__photo-placeholder {
   position: relative;
   display: grid;

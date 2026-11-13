@@ -37,7 +37,21 @@ function createStoryEntry(story, root) {
 
   const media = document.createElement("div");
   media.className = "story-entry__media";
-  if (story.fotografia) {
+  if (story.instagram_reel_id) {
+    if (!/^[A-Za-z0-9_-]+$/.test(story.instagram_reel_id)) {
+      throw new Error(`Identificador de reel inválido na história ${story.id}.`);
+    }
+
+    media.classList.add("story-entry__media--video");
+    const frame = document.createElement("iframe");
+    frame.className = "story-entry__video";
+    frame.src = `https://www.instagram.com/reel/${story.instagram_reel_id}/embed`;
+    frame.title = `Vídeo: ${story.titulo || story.tema}`;
+    frame.loading = "lazy";
+    frame.allowFullscreen = true;
+    frame.scrolling = "no";
+    media.append(frame);
+  } else if (story.fotografia) {
     const imagePath = story.fotografia.replace(/^\/+/, "");
     if (!imagePath.startsWith("assets/img/")) {
       throw new Error(`Caminho de fotografia inválido na história ${story.id}.`);
@@ -131,6 +145,14 @@ function createStoryEntry(story, root) {
       booking.rel = "noopener noreferrer";
     }
     actions.append(booking);
+  }
+
+  if (story.instagram_reel_id) {
+    const watch = textElement("a", "button button--secondary", "Assistir no Instagram");
+    watch.href = `https://www.instagram.com/reel/${story.instagram_reel_id}/`;
+    watch.target = "_blank";
+    watch.rel = "noopener noreferrer";
+    actions.append(watch);
   }
 
   body.append(actions);

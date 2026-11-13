@@ -1,46 +1,32 @@
 [
   {
-    "id": "artesanato-em-pilao",
-    "tema": "Artesanato em pilão",
-    "artesao_nome": "",
-    "segmento": "Artesanato em pilão",
-    "chale": "",
+    "id": "video-vila-1",
+    "tema": "",
+    "titulo": "Vânia Brito",
+    "segmento": "Brinquedos educativos",
     "fotografia": "",
     "trajetoria": "",
-    "status": "pendente",
-    "agendamento_url": ""
+    "status": "em-preparacao",
+    "instagram_reel_id": "DUBHZCKEfJW"
   },
   {
-    "id": "trabalhos-em-couro",
-    "tema": "Trabalhos em couro",
-    "artesao_nome": "",
-    "segmento": "Trabalhos em couro",
-    "chale": "",
+    "id": "video-vila-2",
+    "tema": "",
+    "titulo": "Seu Milton",
+    "segmento": "Artesanato em madeira",
     "fotografia": "",
     "trajetoria": "",
-    "status": "pendente",
-    "agendamento_url": ""
+    "status": "em-preparacao",
+    "instagram_reel_id": "DVy4CqxEcsD"
   },
   {
-    "id": "producao-de-licores",
-    "tema": "Produção de licores",
-    "artesao_nome": "",
-    "segmento": "Produção de licores",
-    "chale": "",
+    "id": "video-vila-3",
+    "tema": "",
+    "titulo": "Josafá de Orós",
+    "segmento": "Xilogravura",
     "fotografia": "",
     "trajetoria": "",
-    "status": "pendente",
-    "agendamento_url": ""
-  },
-  {
-    "id": "cangaco-e-cultura-nordestina",
-    "tema": "Peças relacionadas ao cangaço e à cultura nordestina",
-    "artesao_nome": "",
-    "segmento": "Peças relacionadas ao cangaço e à cultura nordestina",
-    "chale": "",
-    "fotografia": "",
-    "trajetoria": "",
-    "status": "pendente",
-    "agendamento_url": ""
+    "status": "em-preparacao",
+    "instagram_reel_id": "DTTGjOKEbZN"
   }
 ]
