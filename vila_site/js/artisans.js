@@ -188,10 +188,8 @@ export function initArtisans() {
       button.setAttribute("aria-pressed", String(button.dataset.category === category));
     }
 
-    selectionStatus.textContent = category
-      ? catalog.hidden
-        ? `${category} selecionado. Clique em “Fale com um dos nossos artesãos” para ver os resultados.`
-        : `Exibindo o segmento: ${category}.`
+    selectionStatus.textContent = category && !catalog.hidden
+      ? `Exibindo o segmento: ${category}.`
       : "";
 
     if (artisans) renderResults();
@@ -210,6 +208,7 @@ export function initArtisans() {
     });
 
     for (const category of categories) {
+      if (category === "Não informado") continue;
       const option = document.createElement("option");
       option.value = category;
       option.textContent = category;
@@ -243,24 +242,26 @@ export function initArtisans() {
     emptyState.hidden = filteredArtisans.length > 0;
   }
 
-  async function showCatalog() {
-    if (catalog.hidden) {
+  function closeCatalog() {
+    catalog.hidden = true;
+    openButton.setAttribute("aria-expanded", "false");
+    openButton.textContent = "Fale com um dos nossos artesãos";
+    selectionStatus.textContent = "";
+    openButton.focus();
+  }
+
+  async function openCatalog({ focusSearch = true } = {}) {
+    const wasHidden = catalog.hidden;
+    if (wasHidden) {
       catalog.hidden = false;
       openButton.setAttribute("aria-expanded", "true");
       openButton.textContent = "Ocultar catálogo de artesãos";
-      catalog.scrollIntoView({ behavior: "smooth", block: "start" });
-    } else {
-      catalog.hidden = true;
-      openButton.setAttribute("aria-expanded", "false");
-      openButton.textContent = "Fale com um dos nossos artesãos";
-      openButton.focus();
-      return;
     }
-
-    errorMessage.hidden = true;
-    resultsStatus.textContent = "Carregando o catálogo...";
+    catalog.scrollIntoView({ behavior: "smooth", block: "start" });
 
     if (!artisans) {
+      errorMessage.hidden = true;
+      resultsStatus.textContent = "Carregando o catálogo...";
       try {
         artisans = getPublicArtisans(await loadArtisanData());
         populateCategoryFilter();
@@ -272,19 +273,25 @@ export function initArtisans() {
       }
     }
 
-    categoryFilter.value = selectedCategory;
-    renderResults();
-    search.focus({ preventScroll: true });
+    setSelectedCategory(selectedCategory);
+    if (focusSearch) search.focus({ preventScroll: true });
   }
 
-  openButton.addEventListener("click", showCatalog);
+  openButton.addEventListener("click", () => {
+    if (catalog.hidden) {
+      openCatalog();
+    } else {
+      closeCatalog();
+    }
+  });
   search.addEventListener("input", renderResults);
   categoryFilter.addEventListener("change", () => setSelectedCategory(categoryFilter.value));
 
   for (const button of segmentButtons) {
     button.addEventListener("click", () => {
-      const category = selectedCategory === button.dataset.category ? "" : button.dataset.category;
-      setSelectedCategory(category);
+      const isSameCategory = selectedCategory === button.dataset.category && !catalog.hidden;
+      selectedCategory = isSameCategory ? "" : button.dataset.category;
+      openCatalog({ focusSearch: false });
     });
   }
 

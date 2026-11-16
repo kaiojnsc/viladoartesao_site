@@ -108,13 +108,6 @@ function translatePattern(source) {
       : `Mostrando el segmento: ${category}.`;
   }
 
-  match = /^(.+) selecionado\. Clique em “Fale com um dos nossos artesãos” para ver os resultados\.$/.exec(source);
-  if (match) {
-    const category = translate(match[1]);
-    return currentLanguage === "en"
-      ? `${category} selected. Click “Contact one of our artisans” to see the results.`
-      : `${category} seleccionado. Haz clic en “Contactar a uno de nuestros artesanos” para ver los resultados.`;
-  }
 
   match = /^Nenhuma data confirmada para (.+)\. Consulte novamente em breve\.$/.exec(source);
   if (match) {

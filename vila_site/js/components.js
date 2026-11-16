@@ -5,7 +5,7 @@ const navigationPages = [
   ["Sobre a Vila", "pages/sobre.html"],
   ["Artesãos", "pages/artesaos.html"],
   ["Na mídia", "pages/midia.html"],
-  ["Visite a Vila", "pages/visite.html"],
+  ["Contato", "pages/visite.html"],
 ];
 
 const footerPages = [
