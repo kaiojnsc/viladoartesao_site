@@ -1,3 +1,4 @@
+import { clearSkeleton, showSkeleton } from "./skeleton.js";
 import { formatStarLabel } from "./i18n.js";
 
 function textElement(tagName, className, text) {
@@ -233,6 +234,10 @@ export async function initMedia() {
 
   const status = document.querySelector("#media-status");
   const error = document.querySelector("#media-error");
+  const lists = [publicationList, videoList, reelList, testimonialList];
+  for (const list of lists) {
+    showSkeleton(list, { count: list === reelList ? 1 : 3 });
+  }
 
   try {
     const response = await fetch(new URL("../data/midia.json", import.meta.url));
@@ -256,6 +261,7 @@ export async function initMedia() {
       throw new Error("O arquivo de mídia possui formato inválido.");
     }
 
+    for (const list of lists) list.removeAttribute("aria-busy");
     publicationList.replaceChildren(...data.publicacoes.map((entry) => createMediaCard(entry, "publication")));
     videoList.replaceChildren(...data.videos.map((entry) => createMediaCard(entry, "video")));
     reelList.replaceChildren(...data.reels.map(createReelEntry));
@@ -263,6 +269,7 @@ export async function initMedia() {
     status.textContent = `${data.publicacoes.length} publicações, ${data.videos.length} vídeos, ${data.reels.length} Reels e ${data.depoimentos.length} depoimentos.`;
   } catch (loadError) {
     console.error("Falha ao carregar as publicações da Vila.", loadError);
+    for (const list of lists) clearSkeleton(list);
     status.textContent = "";
     error.hidden = false;
   }

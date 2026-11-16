@@ -1,3 +1,4 @@
+import { clearSkeleton, showSkeleton } from "./skeleton.js";
 function textElement(tagName, className, text) {
   const element = document.createElement(tagName);
   element.className = className;
@@ -45,6 +46,7 @@ export async function initReviews() {
 
   const status = document.querySelector("#reviews-videos-status");
   const error = document.querySelector("#reviews-videos-error");
+  showSkeleton(grid, { count: 3 });
 
   try {
     const response = await fetch(new URL("../data/avaliacoes.json", import.meta.url));
@@ -69,10 +71,12 @@ export async function initReviews() {
       throw new Error("O arquivo de avaliações possui formato inválido.");
     }
 
+    grid.removeAttribute("aria-busy");
     grid.replaceChildren(...data.videos.map(createVideoCard));
     status.textContent = `${data.videos.length} vídeos disponíveis.`;
   } catch (loadError) {
     console.error("Falha ao carregar os vídeos da Vila.", loadError);
+    clearSkeleton(grid);
     status.textContent = "";
     error.hidden = false;
   }

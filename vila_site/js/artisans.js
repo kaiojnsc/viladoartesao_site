@@ -1,4 +1,5 @@
 import { getCurrentLanguage } from "./i18n.js";
+import { clearSkeleton, showSkeleton } from "./skeleton.js";
 
 const preferredCategories = [
   "Couro",
@@ -274,11 +275,14 @@ export function initArtisans() {
     if (!artisans) {
       errorMessage.hidden = true;
       resultsStatus.textContent = "Carregando o catálogo...";
+      showSkeleton(resultContainer, { count: 3, variant: "text" });
       try {
         artisans = getPublicArtisans(await loadArtisanData());
+        resultContainer.removeAttribute("aria-busy");
         populateCategoryFilter();
       } catch (error) {
         console.error("Falha ao carregar o catálogo de artesãos.", error);
+        clearSkeleton(resultContainer);
         resultsStatus.textContent = "";
         errorMessage.hidden = false;
         return;

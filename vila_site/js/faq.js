@@ -1,4 +1,5 @@
 import { translate } from "./i18n.js";
+import { clearSkeleton, showSkeleton } from "./skeleton.js";
 
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -148,6 +149,7 @@ export async function initFaq() {
   const status = document.querySelector("#faq-results-status");
   const emptyState = document.querySelector("#faq-empty-state");
   const errorMessage = document.querySelector("#faq-error");
+  showSkeleton(list, { count: 4, variant: "row" });
 
   try {
     const response = await fetch(new URL("../data/faq.json", import.meta.url));
@@ -164,6 +166,7 @@ export async function initFaq() {
       throw new Error("O arquivo de perguntas frequentes possui formato inválido.");
     }
 
+    clearSkeleton(list);
     const root = new URL("../", import.meta.url);
     const categories = new Map();
     const searchableItems = [];
@@ -224,6 +227,7 @@ export async function initFaq() {
     renderResults();
   } catch (loadError) {
     console.error("Falha ao carregar as perguntas frequentes da Vila.", loadError);
+    clearSkeleton(list);
     status.textContent = "";
     errorMessage.hidden = false;
   }
