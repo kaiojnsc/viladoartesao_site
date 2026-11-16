@@ -84,6 +84,10 @@
   box-shadow: 0 0 0 2px rgb(117 69 47 / 15%);
 }
 
+.artisan-segment[hidden] {
+  display: none;
+}
+
 .artisan-segment__icon {
   display: grid;
   width: 3rem;
@@ -235,6 +239,9 @@
 
 .artisan-catalog-card__chalet {
   display: inline-flex;
+  max-width: 100%;
+  min-width: 0;
+  flex-wrap: wrap;
   align-items: center;
   gap: var(--space-2);
   margin-top: var(--space-4);
@@ -243,6 +250,7 @@
   background: var(--color-cotton);
   color: var(--color-coffee);
   font-weight: 850;
+  overflow-wrap: anywhere;
 }
 
 .artisan-catalog-card__chalet strong {
@@ -250,9 +258,11 @@
 }
 
 .artisan-catalog-card__segment {
+  min-width: 0;
   margin-top: var(--space-3);
   color: var(--color-text-muted);
   font-size: var(--font-size-sm);
+  overflow-wrap: anywhere;
 }
 
 .artisan-catalog-card__contact {

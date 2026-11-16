@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Planeje sua visita à Vila do Artesão: consulte o horário informado pela equipe, a localização oficial e a programação confirmada.">
+    <meta name="theme-color" content="#f8f2e8">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Vila do Artesão">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Visite a Vila | Vila do Artesão">
+    <meta property="og:description" content="Planeje sua visita à Vila do Artesão: consulte o horário informado pela equipe, a localização oficial e a programação confirmada.">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <title>Visite a Vila | Vila do Artesão</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/pages/visite.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <script type="module" src="../js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div id="site-header"></div>
+    <main id="conteudo" class="page-content visit-page">
+      <header class="visit-hero">
+        <p class="eyebrow">Planeje sua visita</p>
+        <h1>Visite a Vila</h1>
+        <p>Confira o horário informado pela equipe, consulte a localização e acompanhe a programação oficial.</p>
+      </header>
+
+      <div class="visit-content">
+        <section class="visit-highlights" aria-label="Informações para planejar a visita">
+          <article class="visit-card visit-card--hours" aria-labelledby="visit-hours-title">
+            <svg class="visit-card__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+              <circle cx="24" cy="24" r="17"></circle>
+              <path d="M24 13v12l8 5"></path>
+            </svg>
+            <div>
+              <h2 id="visit-hours-title">Horário de funcionamento</h2>
+              <p class="visit-hours" data-site-hours data-i18n-ignore></p>
+            </div>
+          </article>
+
+          <article class="visit-card visit-card--location" aria-labelledby="visit-location-title">
+            <svg class="visit-card__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+              <path d="M24 43S38 30 38 18a14 14 0 0 0-28 0c0 12 14 25 14 25Z"></path>
+              <circle cx="24" cy="18" r="5"></circle>
+            </svg>
+            <div class="visit-card__body">
+              <h2 id="visit-location-title">Como chegar</h2>
+              <p>Planeje sua rota usando a localização geral da Vila do Artesão.</p>
+              <p><strong>Endereço:</strong> <span data-site-address data-i18n-ignore></span></p>
+              <p class="visit-note">Este link abre a localização da Vila, não a posição individual dos chalés.</p>
+              <a class="button button--primary" href="https://maps.app.goo.gl/HLXZMhie1bfWJQSa8" target="_blank" rel="noopener noreferrer">
+                Abrir localização no Google Maps
+              </a>
+            </div>
+          </article>
+        </section>
+
+        <section class="visit-program" aria-labelledby="visit-program-title">
+          <div class="visit-program__heading">
+            <p class="eyebrow">Programação e canais de contato</p>
+            <h2 id="visit-program-title">Programação</h2>
+          </div>
+
+          <div id="visit-event-grid" class="visit-event-grid" aria-live="polite"></div>
+          <div id="visit-events-empty" class="visit-empty" hidden>
+            <p>Não há eventos divulgados neste momento. Acompanhe o Instagram oficial da Vila para consultar as publicações.</p>
+          </div>
+          <a class="button button--secondary visit-instagram-link" href="https://www.instagram.com/viladoartesaocg/" target="_blank" rel="noopener noreferrer">
+            Acompanhar o Instagram oficial
+          </a>
+          <p id="visit-events-error" class="alert alert--error visit-error" role="alert" hidden>
+            Não foi possível carregar a programação agora. Consulte o Instagram oficial para acompanhar os anúncios.
+          </p>
+        </section>
+      </div>
+    </main>
+    <div id="site-footer"></div>
+  </body>
+</html>

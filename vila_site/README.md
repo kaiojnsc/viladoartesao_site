@@ -16,10 +16,10 @@ O site não tem etapa de compilação. O arquivo `index.html` na raiz é a pági
 | Caminho | Responsabilidade |
 |---|---|
 | `index.html` | Página inicial e ponto de entrada do site. |
-| `pages/` | Páginas institucionais: sobre, artesãos, histórias, calendário, roteiros, avaliações, mapa, FAQ, agendamento, contato e privacidade. |
+| `pages/` | Páginas institucionais: sobre, artesãos, Na mídia, Visite a Vila, roteiros, avaliações, mapa, FAQ, agendamento e privacidade. |
 | `assets/img/` | Fotografias autorizadas e imagens de conteúdo. |
-| `assets/logos/` | Logos da Vila do Artesão, da UNIFACISA e da identidade institucional Empreendedores do Agora. |
-| `assets/mascote/` | Arquivos da mascote, em PNG e SVG. |
+| `assets/logos/` | Logos da Vila do Artesão e da UNIFACISA. |
+| `assets/mascote/` | Arquivos da mascote. |
 | `assets/mapa/` | Arquivo do mapa a ser fornecido para substituir o espaço provisório. |
 | `css/` | Reset, variáveis visuais, estilos globais, componentes, responsividade e estilos por página. |
 | `js/` | Inicialização do site, cabeçalho/rodapé compartilhados e módulos interativos. |
@@ -32,10 +32,12 @@ Mais detalhes: [`docs/estrutura.md`](docs/estrutura.md).
 ## Atualizar conteúdo
 
 - **Artesãos:** altere `data/artesaos.json`, preservando cada registro e os campos de origem. Consulte [`docs/artesaos.md`](docs/artesaos.md).
-- **Eventos:** altere `data/eventos.json`; só use datas e informações confirmadas. Consulte [`docs/calendario.md`](docs/calendario.md).
-- **Histórias:** inclua registros em `data/historias.json`, com relatos e imagens autorizados. Consulte [`docs/historias.md`](docs/historias.md).
+- **Eventos:** altere `data/eventos.json`; a página Visite a Vila exibe apenas registros com título, data válida, descrição e status confirmado/publicado. Consulte [`docs/calendario.md`](docs/calendario.md).
+- **Na mídia:** atualize `data/midia.json` somente com publicações e vídeos públicos verificáveis; imagens exigem autorização de uso. Consulte [`docs/midia.md`](docs/midia.md).
+- **Histórias:** `data/historias.json` é um arquivo legado e não alimenta uma página pública. Não publique biografias, relatos ou links individuais sem confirmação e autorização. Consulte [`docs/historias.md`](docs/historias.md).
 - **Página inicial:** os segmentos exibidos seguem as categorias do recadastramento disponibilizado ao projeto. Perfis, galeria, conteúdos editoriais e depoimentos permanecem como espaços de preparação até que existam dados, fotografias e autorizações confirmados.
 - **Mapa:** coloque o arquivo em `assets/mapa/` e atualize os atributos do componente em `pages/mapa.html`. Consulte [`docs/mapa.md`](docs/mapa.md).
+- **Horário de funcionamento:** atualize `js/site-config.js`, registre a data somente após confirmação administrativa e confira feriados e programações especiais.
 - **Telefone/WhatsApp oficial:** atualize `data/contato.json` somente após confirmação. Consulte [`docs/contato.md`](docs/contato.md).
 - **Agendamento:** configure o endpoint e a aprovação do aviso antes de ativar o envio. Consulte [`docs/agendamento.md`](docs/agendamento.md).
 - **Avaliações:** o recebimento depende de um formulário externo aprovado. Consulte [`docs/avaliacoes.md`](docs/avaliacoes.md).

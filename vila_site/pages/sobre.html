@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Conheça a proposta institucional da Vila do Artesão de Campina Grande e saiba como o site valoriza o artesanato e a cultura regional.">
+    <meta name="description" content="Conheça a história da Vila do Artesão de Campina Grande, sua contribuição cultural e econômica, a diversidade artesanal e as melhorias de 2024.">
     <meta name="theme-color" content="#f8f2e8">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:site_name" content="Vila do Artesão">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Sobre a Vila do Artesão | Campina Grande">
-    <meta property="og:description" content="Conheça a proposta institucional da Vila do Artesão de Campina Grande e saiba como o site valoriza o artesanato e a cultura regional.">
+    <meta property="og:description" content="Conheça a história da Vila do Artesão de Campina Grande, sua contribuição cultural e econômica, a diversidade artesanal e as melhorias de 2024.">
     <meta name="twitter:card" content="summary">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <title>Sobre a Vila do Artesão | Campina Grande</title>
@@ -21,138 +21,8 @@
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/components.css">
     <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="../css/animations.css">
     <link rel="stylesheet" href="../css/accessibility.css">
-    <style>
-      .about-gallery {
-        margin-top: 3rem;
-        padding: 1.5rem 0 0;
-      }
-
-      .about-gallery__head {
-        margin-bottom: 1.25rem;
-      }
-
-      .about-gallery__head h2 {
-        margin-bottom: 0.5rem;
-      }
-
-      .about-gallery__carousel {
-        position: relative;
-        max-width: 72rem;
-        margin: 0 auto;
-      }
-
-      .about-gallery__track {
-        position: relative;
-        overflow: hidden;
-        border-radius: 1.25rem;
-        background: #f7efe7;
-        border: 1px solid rgba(74, 55, 35, 0.12);
-        box-shadow: 0 18px 45px rgba(45, 31, 17, 0.08);
-      }
-
-      .about-gallery__slide {
-        display: none;
-        width: 100%;
-        background: #f7efe7;
-      }
-
-      .about-gallery__slide.is-active {
-        display: block;
-      }
-
-      .about-gallery__slide img {
-        display: block;
-        width: 100%;
-        height: clamp(18rem, 35vw, 34rem);
-        object-fit: contain;
-        object-position: center;
-        background: #f7efe7;
-      }
-
-      .about-gallery__nav {
-        position: absolute;
-        top: 50%;
-        z-index: 2;
-        transform: translateY(-50%);
-        width: 2.8rem;
-        height: 2.8rem;
-        border: 0;
-        border-radius: 999px;
-        background: rgba(30, 22, 15, 0.7);
-        color: #fff;
-        font-size: 1.8rem;
-        line-height: 1;
-        cursor: pointer;
-        transition: background 0.2s ease, transform 0.2s ease;
-      }
-
-      .about-gallery__nav:hover,
-      .about-gallery__nav:focus-visible {
-        background: rgba(30, 22, 15, 0.88);
-        transform: translateY(-50%) scale(1.05);
-      }
-
-      .about-gallery__nav--prev {
-        left: 1rem;
-      }
-
-      .about-gallery__nav--next {
-        right: 1rem;
-      }
-
-      .about-gallery__dots {
-        display: flex;
-        justify-content: center;
-        gap: 0.55rem;
-        margin-top: 1rem;
-      }
-
-      .about-gallery__dot {
-        width: 0.7rem;
-        height: 0.7rem;
-        border: 0;
-        border-radius: 999px;
-        background: rgba(89, 67, 49, 0.28);
-        cursor: pointer;
-        transition: transform 0.2s ease, background 0.2s ease;
-      }
-
-      .about-gallery__dot.is-active {
-        background: #a15d32;
-        transform: scale(1.15);
-      }
-
-      @media (max-width: 48rem) {
-        .about-gallery {
-          margin-top: 2.25rem;
-        }
-
-        .about-gallery__carousel {
-          max-width: 100%;
-        }
-
-        .about-gallery__slide img {
-          height: 18rem;
-          object-fit: contain;
-        }
-
-        .about-gallery__nav {
-          width: 2.4rem;
-          height: 2.4rem;
-          font-size: 1.5rem;
-        }
-
-        .about-gallery__nav--prev {
-          left: 0.5rem;
-        }
-
-        .about-gallery__nav--next {
-          right: 0.5rem;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="../css/carousel.css">
     <script type="module" src="../js/main.js"></script>
   </head>
   <body>
@@ -162,62 +32,86 @@
       <header class="intro">
         <p class="eyebrow">Campina Grande · Paraíba</p>
         <h1>Sobre a Vila do Artesão</h1>
-        <p>A Vila reúne produção artesanal e expressões culturais em Campina Grande. Este espaço apresenta o que está confirmado e será ampliado com informações institucionais validadas.</p>
+        <p>Desde 2010, a Vila do Artesão reúne trabalho manual, cultura popular e oportunidades para artesãos de Campina Grande. Conheça sua trajetória e o papel do espaço na vida cultural e turística da cidade.</p>
       </header>
 
+      <section aria-labelledby="about-origin-title">
+        <h2 id="about-origin-title">Origem e fundação</h2>
+        <p>Fundada em dezembro de 2010, a Vila do Artesão nasceu como uma iniciativa pública para reunir artesãos de Campina Grande em um espaço de produção, exposição e comercialização de seus trabalhos. A Prefeitura e a Agência Municipal de Desenvolvimento (AMDE) identificam a Vila como um espaço público dedicado à valorização da cultura nordestina.</p>
+      </section>
+
       <section aria-labelledby="about-purpose-title">
-        <h2 id="about-purpose-title">Um espaço de criação e encontro</h2>
-        <p>O site foi criado para aproximar visitantes dos segmentos cadastrados na Vila, apresentar caminhos de visita e valorizar o trabalho artesanal. Cada peça, técnica e material pode expressar conhecimentos e modos de criar diversos.</p>
-        <p>As informações desta página são intencionalmente cuidadosas: detalhes históricos, datas e outras informações institucionais serão incluídos após confirmação pela equipe responsável.</p>
+        <h2 id="about-purpose-title">Propósito cultural e econômico</h2>
+        <p>Ao aproximar quem produz de moradores e visitantes, a Vila contribui para dar visibilidade ao artesanato local e criar oportunidades de renda para os artesãos. O espaço também promove o encontro com expressões da cultura nordestina e integra os atrativos culturais e turísticos de Campina Grande.</p>
+      </section>
+
+      <section aria-labelledby="about-craft-title">
+        <h2 id="about-craft-title">Artesanato e diversidade de materiais</h2>
+        <p>Reportagens e registros culturais sobre a Vila documentam trabalhos em barro, couro, madeira, fios, tecidos, rendas e bordados, entre outras técnicas e matérias-primas. Essa variedade se traduz em peças utilitárias e decorativas, feitas à mão e ligadas a diferentes saberes artesanais. Os exemplos refletem registros de períodos distintos, não um inventário atualizado de todos os produtos disponíveis.</p>
+      </section>
+
+      <section aria-labelledby="about-renovation-title">
+        <h2 id="about-renovation-title">Revitalização do espaço</h2>
+        <p>Em 2024, a Vila passou por ações de revitalização que incluíram melhorias na fachada, pintura dos chalés, murais inspirados na xilogravura, uma nova capela e um novo palco. Também foram ampliadas as opções de comidas típicas. As intervenções renovaram o ambiente e sua identidade visual, mantendo o artesanato como parte central da experiência.</p>
+      </section>
+
+      <section aria-labelledby="about-visitation-title">
+        <h2 id="about-visitation-title">Visitação e São João</h2>
+        <p>A Vila recebe visitantes ao longo do ano e ganha movimento especial durante o período junino, quando a programação cultural e a procura turística se intensificam. A AMDE registrou mais de 15 mil pessoas no Dia de São João de 2023. Em outro evento, em 13 de junho de 2026, a Vila atingiu a capacidade máxima e fechou os portões, com mais de 7 mil pessoas presentes simultaneamente. São registros de ocasiões específicas, não dados anuais de visitação.</p>
+        <p><strong>Horário de funcionamento:</strong> <span data-site-hours data-i18n-ignore></span></p>
       </section>
 
       <section class="about-gallery" aria-labelledby="about-gallery-title">
         <div class="about-gallery__head">
           <h2 id="about-gallery-title">Um passeio pela Vila</h2>
-          <p>Imagens do espaço, da cultura e do artesanato que marcam a identidade da Vila do Artesão.</p>
+          <p>Fotografias do espaço, do artesanato e de atividades culturais na Vila do Artesão.</p>
         </div>
 
-        <div class="about-gallery__carousel" data-gallery-carousel>
-          <button class="about-gallery__nav about-gallery__nav--prev" type="button" aria-label="Imagem anterior">&#8249;</button>
-          <div class="about-gallery__track" aria-live="polite">
-            <div class="about-gallery__slide is-active"><img src="../imagens_viladoartesao/3_do_nordeste.webp" alt="Imagem da Vila do Artesão destacando o artesanato e a cultura regional"></div>
-            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/artesas_tricotando.webp" alt="Artesãs trabalhando manualmente na Vila do Artesão"></div>
-            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/cantata_de_natal.webp" alt="Cantata de Natal na Vila do Artesão"></div>
-            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/entrada.webp" alt="Entrada principal da Vila do Artesão"></div>
-            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/entrada_sao_joao..webp" alt="Entrada da Vila em época de São João"></div>
-            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/entrada_sao_joao2.webp" alt="Outra visão da entrada da Vila durante a festa de São João"></div>
-            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/epoca_sao_joao.webp" alt="Momentos de São João na Vila do Artesão"></div>
-            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/fogueira_sao_joao.webp" alt="Fogueira e celebrações de São João na Vila"></div>
-            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/folia_na_vila.webp" alt="Folia e movimento cultural na Vila do Artesão"></div>
-            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/musica_na_vila.webp" alt="Música e cultura em evento da Vila"></div>
-            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/palestra.webp" alt="Palestra e momentos de conhecimento na Vila"></div>
-            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/palestra_natal.webp" alt="Palestra temática de Natal na Vila"></div>
-            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/papai_noel.webp" alt="Papai Noel e celebração na Vila do Artesão"></div>
-            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/quadrilha_na_vila.webp" alt="Quadrilha e cultura popular na Vila do Artesão"></div>
-            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/santos.webp" alt="Representação de santos e celebrações na Vila"></div>
-            <div class="about-gallery__slide"><img src="../imagens_viladoartesao/santos_natal.webp" alt="Santos e celebrações de Natal na Vila"></div>
+        <div class="about-gallery__carousel" data-gallery-carousel role="region" aria-label="Galeria de fotografias da Vila do Artesão" tabindex="0">
+          <button class="about-gallery__nav about-gallery__nav--prev" type="button" aria-label="Fotografia anterior" aria-controls="about-gallery-track">&#8249;</button>
+          <div class="about-gallery__track" id="about-gallery-track" aria-live="polite" aria-atomic="true">
+            <figure class="about-gallery__slide is-active">
+              <img src="../assets/imagens_viladoartesao/entrada.jpeg" alt="Entrada da Vila do Artesão decorada com bandeirolas coloridas." width="3024" height="4032" loading="lazy" decoding="async">
+              <figcaption>Entrada da Vila</figcaption>
+            </figure>
+            <figure class="about-gallery__slide" hidden>
+              <img src="../assets/imagens_viladoartesao/folgueira.jpeg" alt="Lanternas coloridas e bandeirolas suspensas no interior da Vila do Artesão." width="4032" height="2781" loading="lazy" decoding="async">
+              <figcaption>Período Junino</figcaption>
+            </figure>
+            <figure class="about-gallery__slide" hidden>
+              <img src="../assets/imagens_viladoartesao/artesaos.PNG" alt="Peças de crochê expostas em primeiro plano em uma banca da Vila do Artesão." width="1170" height="1600" loading="lazy" decoding="async">
+              <figcaption>Peças de crochê</figcaption>
+            </figure>
+            <figure class="about-gallery__slide" hidden>
+              <img src="../assets/imagens_viladoartesao/igreja2.jpeg" alt="Capela azul da Vila diante de cadeiras dispostas para uma atividade." width="3024" height="4032" loading="lazy" decoding="async">
+              <figcaption>Capela e espaço de convivência</figcaption>
+            </figure>
+            <figure class="about-gallery__slide" hidden>
+              <img src="../assets/imagens_viladoartesao/festas.jpeg" alt="Apresentação musical diante do público na Vila do Artesão." width="1224" height="1600" loading="lazy" decoding="async">
+              <figcaption>Apresentação musical</figcaption>
+            </figure>
+            <figure class="about-gallery__slide" hidden>
+              <img src="../assets/imagens_viladoartesao/festas1.jpeg" alt="Público reunido em um corredor decorado com bandeirolas na Vila do Artesão." width="1086" height="1448" loading="lazy" decoding="async">
+              <figcaption>Público na Vila</figcaption>
+            </figure>
+            <figure class="about-gallery__slide" hidden>
+              <img src="../assets/imagens_viladoartesao/igreja.jpeg" alt="Capela azul da Vila iluminada à noite, com presépio ao lado." width="3024" height="4032" loading="lazy" decoding="async">
+              <figcaption>Capela iluminada</figcaption>
+            </figure>
           </div>
-          <button class="about-gallery__nav about-gallery__nav--next" type="button" aria-label="Próxima imagem">&#8250;</button>
+          <button class="about-gallery__nav about-gallery__nav--next" type="button" aria-label="Próxima fotografia" aria-controls="about-gallery-track">&#8250;</button>
         </div>
 
-        <div class="about-gallery__dots" aria-label="Navegação por imagens">
-          <button class="about-gallery__dot is-active" type="button" aria-label="Ir para a imagem 1"></button>
-          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 2"></button>
-          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 3"></button>
-          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 4"></button>
-          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 5"></button>
-          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 6"></button>
-          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 7"></button>
-          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 8"></button>
-          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 9"></button>
-          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 10"></button>
-          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 11"></button>
-          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 12"></button>
-          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 13"></button>
-          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 14"></button>
-          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 15"></button>
-          <button class="about-gallery__dot" type="button" aria-label="Ir para a imagem 16"></button>
+        <div class="about-gallery__dots" role="group" aria-label="Navegação por fotografias">
+          <button class="about-gallery__dot" type="button" aria-label="Mostrar foto: Entrada da Vila" aria-current="true" aria-controls="about-gallery-track"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Mostrar foto: Período Junino" aria-controls="about-gallery-track"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Mostrar foto: Peças de crochê" aria-controls="about-gallery-track"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Mostrar foto: Capela e espaço de convivência" aria-controls="about-gallery-track"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Mostrar foto: Apresentação musical" aria-controls="about-gallery-track"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Mostrar foto: Público na Vila" aria-controls="about-gallery-track"></button>
+          <button class="about-gallery__dot" type="button" aria-label="Mostrar foto: Capela iluminada" aria-controls="about-gallery-track"></button>
         </div>
+        <p class="about-gallery__credit">Fotografias: Caroline Mota</p>
       </section>
 
       <section aria-labelledby="about-project-title">
@@ -226,50 +120,25 @@
         <p>A proposta é oferecer um ponto de partida acessível para conhecer a Vila, consultar o catálogo e acompanhar histórias autorizadas.</p>
         <div class="about-page__actions">
           <a class="button button--primary" href="artesaos.html">Consultar segmentos e artesãos</a>
-          <a class="button button--secondary" href="contato.html">Ver canais oficiais de contato</a>
+          <a class="button button--secondary" href="visite.html">Visite a Vila</a>
         </div>
       </section>
 
-      <aside class="alert alert--info" role="note">
-        <strong>Conteúdo em atualização responsável.</strong> Uma história institucional mais detalhada será publicada quando houver fontes e validação da equipe da Vila.
-      </aside>
+      <section aria-labelledby="about-sources-title">
+        <h2 id="about-sources-title">Fontes e leituras</h2>
+        <ul>
+          <li><a href="https://amde.campinagrande.pb.gov.br/public/noticia/vila-do-artesao-completa-13-anos-nesta-sexta-feira" target="_blank" rel="noopener noreferrer" data-i18n-ignore>Vila do Artesão completa 13 anos, nesta sexta-feira</a> — AMDE, 21 de dezembro de 2023.</li>
+          <li><a href="https://campinagrande.pb.gov.br/vila-do-artesao-de-campina-grande-comemora-12-anos-de-historia-nesta-quinta/" target="_blank" rel="noopener noreferrer" data-i18n-ignore>Vila do Artesão de Campina Grande comemora 12 anos de história nesta quinta-feira</a> — Prefeitura de Campina Grande, 21 de dezembro de 2022.</li>
+          <li><a href="https://reporterjunino.com.br/2016/06/12/especial-vila-do-artesao-um-lugar-cheio-de-vidas/" target="_blank" rel="noopener noreferrer" data-i18n-ignore>ESPECIAL: Vila do Artesão – Um lugar cheio de vida(s)</a> — Repórter Junino, 12 de junho de 2016.</li>
+          <li><a href="https://paraibacriativa.com.br/artista/vila-do-artesao/" target="_blank" rel="noopener noreferrer" data-i18n-ignore>Vila do Artesão</a> — Paraíba Criativa, sem data de publicação informada (acesso em 15 de novembro de 2026).</li>
+          <li><a href="https://paraibaonline.com.br/paraiba/2024/06/03/revitalizacao-da-vila-do-artesao-impulsiona-cultura-artesanato-e-economia-local/" target="_blank" rel="noopener noreferrer" data-i18n-ignore>Revitalização da Vila do Artesão impulsiona cultura, artesanato e economia local</a> — ParaíbaOnline, 3 de junho de 2024.</li>
+          <li><a href="https://amde.campinagrande.pb.gov.br/public/noticia/recorde-de-publico-vila-do-artesao-atrai-mais-de-15-mil-visitantes-no-dia-de-sao-joao" target="_blank" rel="noopener noreferrer" data-i18n-ignore>Recorde de Público: Vila do Artesão atrai mais de 15 mil visitantes no Dia de São João</a> — AMDE, 24 de junho de 2023.</li>
+          <li><a href="https://amde.campinagrande.pb.gov.br/public/noticia/vila-do-artesao-com-recorde-de-publico-e-portoes-fechados" target="_blank" rel="noopener noreferrer" data-i18n-ignore>Vila do Artesão com recorde de público e portões fechados!</a> — AMDE, 13 de junho de 2026.</li>
+          <li><a href="https://g1.globo.com/pb/paraiba/sao-joao/2014/noticia/2014/06/vila-do-artesao-preserva-trabalho-de-artesaos-de-campina-grande.html" target="_blank" rel="noopener noreferrer" data-i18n-ignore>Vila do Artesão preserva trabalho de artesãos de Campina Grande</a> — G1 Paraíba, 15 de junho de 2014.</li>
+        </ul>
+      </section>
     </main>
     <div id="site-footer"></div>
 
-    <script>
-      (() => {
-        const carousel = document.querySelector('[data-gallery-carousel]');
-        if (!carousel) return;
-
-        const slides = Array.from(carousel.querySelectorAll('.about-gallery__slide'));
-        const dots = Array.from(document.querySelectorAll('.about-gallery__dot'));
-        const prevButton = carousel.querySelector('.about-gallery__nav--prev');
-        const nextButton = carousel.querySelector('.about-gallery__nav--next');
-
-        let currentIndex = 0;
-
-        const showSlide = (index) => {
-          currentIndex = (index + slides.length) % slides.length;
-
-          slides.forEach((slide, i) => {
-            slide.classList.toggle('is-active', i === currentIndex);
-          });
-
-          dots.forEach((dot, i) => {
-            dot.classList.toggle('is-active', i === currentIndex);
-            dot.setAttribute('aria-current', i === currentIndex ? 'true' : 'false');
-          });
-        };
-
-        prevButton?.addEventListener('click', () => showSlide(currentIndex - 1));
-        nextButton?.addEventListener('click', () => showSlide(currentIndex + 1));
-
-        dots.forEach((dot, index) => {
-          dot.addEventListener('click', () => showSlide(index));
-        });
-
-        setInterval(() => showSlide(currentIndex + 1), 5000);
-      })();
-    </script>
   </body>
 </html>

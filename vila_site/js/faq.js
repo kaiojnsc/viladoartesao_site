@@ -1,3 +1,5 @@
+import { translate } from "./i18n.js";
+
 function createTextElement(tagName, className, text) {
   const element = document.createElement(tagName);
   element.className = className;
@@ -37,7 +39,9 @@ function createAnswerLink(link, root) {
 function createQuestionItem(question, root) {
   const item = document.createElement("details");
   item.className = "faq-item";
-  item.dataset.searchText = normalizeText(`${question.pergunta} ${question.resposta}`);
+  item.dataset.searchText = normalizeText(
+    `${translate(question.categoria)} ${translate(question.pergunta)} ${translate(question.resposta)}`,
+  );
 
   const summary = document.createElement("summary");
   summary.className = "faq-item__question";
@@ -58,13 +62,6 @@ function createQuestionItem(question, root) {
   inner.className = "faq-item__answer";
   inner.append(createTextElement("p", "", question.resposta));
 
-  if (question.provisoria) {
-    inner.append(createTextElement(
-      "p",
-      "faq-item__pending",
-      "Resposta provisória — aguardando revisão da equipe responsável.",
-    ));
-  }
   if (question.link) inner.append(createAnswerLink(question.link, root));
 
   answer.append(inner);
@@ -86,7 +83,6 @@ function isValidQuestion(question) {
     && question.categoria.trim().length > 0
     && typeof question.resposta === "string"
     && question.resposta.trim().length > 0
-    && typeof question.provisoria === "boolean"
     && (!question.link || (
       typeof question.link.texto === "string"
       && typeof question.link.url === "string"
@@ -120,6 +116,7 @@ export async function initFaq() {
 
     const root = new URL("../", import.meta.url);
     const categories = new Map();
+    const searchableItems = [];
     for (const question of questions) {
       if (!categories.has(question.categoria)) {
         const section = document.createElement("section");
@@ -133,7 +130,9 @@ export async function initFaq() {
       }
 
       const category = categories.get(question.categoria);
-      category.items.append(createQuestionItem(question, root));
+      const item = createQuestionItem(question, root);
+      category.items.append(item);
+      searchableItems.push({ item, question });
     }
 
     function renderResults() {
@@ -159,6 +158,14 @@ export async function initFaq() {
     }
 
     input.addEventListener("input", renderResults);
+    document.addEventListener("vila:language-change", () => {
+      for (const { item, question } of searchableItems) {
+        item.dataset.searchText = normalizeText(
+          `${translate(question.categoria)} ${translate(question.pergunta)} ${translate(question.resposta)}`,
+        );
+      }
+      renderResults();
+    });
     clearButton.addEventListener("click", () => {
       input.value = "";
       input.focus();

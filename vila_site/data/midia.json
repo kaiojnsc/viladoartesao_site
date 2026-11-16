@@ -1,0 +1,167 @@
+{
+  "publicacoes": [
+    {
+      "id": "amde-recorde-publico-2026",
+      "tipo": "noticia",
+      "titulo": "VILA DO ARTESÃO COM RECORDE DE PÚBLICO E PORTÕES FECHADOS!",
+      "veiculo": "AMDE",
+      "autoria": "",
+      "data": "2026-06-13",
+      "resumo": "A AMDE registrou que, em 13 de junho de 2026, a Vila atingiu sua capacidade máxima e fechou os portões, com mais de 7 mil pessoas presentes ao mesmo tempo.",
+      "capa": "assets/imagens_viladoartesao/festas1.jpeg",
+      "capa_alt": "Público reunido em uma rua decorada da Vila durante festa junina; imagem ilustrativa, não necessariamente do evento de 2026.",
+      "url": "https://amde.campinagrande.pb.gov.br/public/noticia/vila-do-artesao-com-recorde-de-publico-e-portoes-fechados"
+    },
+    {
+      "id": "reporter-junino-maos-que-fabricam-2025",
+      "tipo": "reportagem",
+      "titulo": "A arte que move a vila: Mãos que fabricam parte do São João em Campina Grande",
+      "veiculo": "Repórter Junino",
+      "autoria": "Glória Borges",
+      "data": "2025-06-02",
+      "resumo": "A reportagem aborda a produção artesanal e os desafios e expectativas do trabalho na Vila durante o período junino, sem transformar os relatos publicados em perfis neste site.",
+      "capa": "assets/imagens_viladoartesao/entrada.jpeg",
+      "capa_alt": "Entrada da Vila do Artesão decorada com bandeirolas; imagem ilustrativa.",
+      "url": "https://reporterjunino.com.br/2025/06/02/a-arte-que-move-a-vila-maos-que-fabricam-parte-do-sao-joao-em-campina-grande/"
+    },
+    {
+      "id": "paraiba-online-mulheres-empreendedoras-2024",
+      "tipo": "reportagem",
+      "titulo": "Vila do Artesão, em Campina Grande: mulheres empreendedoras",
+      "veiculo": "ParaíbaOnline",
+      "autoria": "Julia Nunes e Luana Nunes (Repórter Junino)",
+      "data": "2024-06-24",
+      "resumo": "A matéria destaca a contribuição de mulheres para o artesanato e a economia criativa da Vila, além de apresentar diferentes materiais e etapas de produção.",
+      "capa": "assets/imagens_viladoartesao/entrada.jpeg",
+      "capa_alt": "Vista da entrada da Vila do Artesão; imagem ilustrativa, não é a capa da reportagem.",
+      "url": "https://paraibaonline.com.br/sao-joao/2024/06/24/vila-do-artesao-em-campina-grande-mulheres-empreendedoras/"
+    },
+    {
+      "id": "paraiba-online-revitalizacao-2024",
+      "tipo": "noticia",
+      "titulo": "Revitalização da Vila do Artesão impulsiona cultura, artesanato e economia local",
+      "veiculo": "ParaíbaOnline",
+      "autoria": "Da Redação",
+      "data": "2024-06-03",
+      "resumo": "A publicação relata as melhorias de 2024, entre elas a renovação da fachada e dos chalés, murais inspirados na xilogravura, uma nova capela e um novo palco.",
+      "capa": "assets/imagens_viladoartesao/igreja.jpeg",
+      "capa_alt": "Capela da Vila do Artesão durante decoração natalina; imagem ilustrativa.",
+      "url": "https://paraibaonline.com.br/paraiba/2024/06/03/revitalizacao-da-vila-do-artesao-impulsiona-cultura-artesanato-e-economia-local/"
+    },
+    {
+      "id": "amde-recorde-sao-joao-2023",
+      "tipo": "noticia",
+      "titulo": "Recorde de Público: Vila do Artesão atrai mais de 15 mil visitantes no Dia de São João",
+      "veiculo": "AMDE",
+      "autoria": "",
+      "data": "2023-06-24",
+      "resumo": "A AMDE informou que mais de 15 mil pessoas visitaram a Vila no Dia de São João de 2023. O número se refere àquele dia, não à visitação anual.",
+      "capa": "assets/imagens_viladoartesao/festas.jpeg",
+      "capa_alt": "Público acompanha uma apresentação musical na Vila do Artesão; imagem ilustrativa, não necessariamente do evento de 2023.",
+      "url": "https://amde.campinagrande.pb.gov.br/public/noticia/recorde-de-publico-vila-do-artesao-atrai-mais-de-15-mil-visitantes-no-dia-de-sao-joao"
+    },
+    {
+      "id": "reporter-junino-especial-vila-2016",
+      "tipo": "reportagem",
+      "titulo": "ESPECIAL: Vila do Artesão – Um lugar cheio de vida(s)",
+      "veiculo": "Repórter Junino",
+      "autoria": "",
+      "data": "2016-06-12",
+      "resumo": "O especial apresenta a Vila como espaço de artesanato e cultura nordestina, com atividades que vão além do período junino.",
+      "capa": "assets/imagens_viladoartesao/entrada.jpeg",
+      "capa_alt": "Vista da entrada da Vila do Artesão; imagem ilustrativa, não é a capa da reportagem.",
+      "url": "https://reporterjunino.com.br/2016/06/12/especial-vila-do-artesao-um-lugar-cheio-de-vidas/"
+    },
+    {
+      "id": "g1-preserva-trabalho-artesoes-2014",
+      "tipo": "reportagem",
+      "titulo": "Vila do Artesão preserva trabalho de artesãos de Campina Grande",
+      "veiculo": "G1 Paraíba",
+      "autoria": "Rafael Melo",
+      "data": "2014-06-15",
+      "resumo": "A reportagem percorre a variedade de trabalhos artesanais e a procura pela Vila durante o São João, registrando diferentes formas de produção e comercialização.",
+      "capa": "assets/imagens_viladoartesao/entrada.jpeg",
+      "capa_alt": "Vista da entrada da Vila do Artesão; imagem ilustrativa, não é a capa da reportagem.",
+      "url": "https://g1.globo.com/pb/paraiba/sao-joao/2014/noticia/2014/06/vila-do-artesao-preserva-trabalho-de-artesaos-de-campina-grande.html"
+    }
+  ],
+  "videos": [
+    {
+      "id": "yP4YisjJtgg",
+      "titulo": "VILA DO ARTESÃO EM CAMPINA GRANDE: O Lugar Mais Bonito e Cultural da Paraíba?",
+      "veiculo": "Caio Nordestino",
+      "data": null,
+      "resumo": "O canal apresenta a Vila do Artesão de Campina Grande e a destaca em seu título como espaço cultural da Paraíba.",
+      "url": "https://www.youtube.com/watch?v=yP4YisjJtgg"
+    },
+    {
+      "id": "UHpXhodhrB4",
+      "titulo": "VILA DO ARTESÃO DE CAMPINA GRANDE | SÃO JOÃO DE CAMPINA GRANDE 2024",
+      "veiculo": "Portal Correio",
+      "data": null,
+      "resumo": "Vídeo do Portal Correio sobre a Vila do Artesão no contexto do São João de Campina Grande de 2024.",
+      "url": "https://www.youtube.com/watch?v=UHpXhodhrB4"
+    }
+  ],
+  "reels": [
+    {
+      "id": "DUBHZCKEfJW",
+      "titulo": "Brinquedos educativos",
+      "veiculo": "Instagram",
+      "data": null,
+      "resumo": "Atalho para um Reel relacionado ao segmento de brinquedos educativos da Vila do Artesão.",
+      "capa": "assets/imagens_viladoartesao/entrada.jpeg",
+      "capa_alt": "Imagem ilustrativa da entrada da Vila; não é a capa original do Reel.",
+      "url": "https://www.instagram.com/reel/DUBHZCKEfJW/"
+    },
+    {
+      "id": "DVy4CqxEcsD",
+      "titulo": "Artesanato em madeira",
+      "veiculo": "Instagram",
+      "data": null,
+      "resumo": "Atalho para um Reel relacionado ao segmento de artesanato em madeira da Vila do Artesão.",
+      "capa": "assets/imagens_viladoartesao/entrada.jpeg",
+      "capa_alt": "Imagem ilustrativa da Vila; não é a capa original do Reel.",
+      "url": "https://www.instagram.com/reel/DVy4CqxEcsD/"
+    },
+    {
+      "id": "DTTGjOKEbZN",
+      "titulo": "Xilogravura",
+      "veiculo": "Instagram",
+      "data": null,
+      "resumo": "Atalho para um Reel relacionado à xilogravura na Vila do Artesão.",
+      "capa": "assets/imagens_viladoartesao/entrada.jpeg",
+      "capa_alt": "Imagem ilustrativa da Vila; não é a capa original do Reel.",
+      "url": "https://www.instagram.com/reel/DTTGjOKEbZN/"
+    }
+  ],
+  "depoimentos": [
+    {
+      "id": "google-visitante-2024-04",
+      "autoria": "Cristina C.",
+      "nota": 5,
+      "data": "2024-04",
+      "veiculo": "Google · Avaliação pública",
+      "texto": "Local agradável e seguro. Achei o que procurava.",
+      "url": "https://www.google.com/maps/place/@-7.228484,-35.890456,17z/data=!4m10!3m9!1s0x7ac1e4126c5f923:0x3356f585edf2569d!5m2!4m1!1i2!8m2!3d-7.228484!4d-35.890456!9m1!1b1"
+    },
+    {
+      "id": "google-visitante-2022-06",
+      "autoria": "Gabriel F.",
+      "nota": 5,
+      "data": "2022-06",
+      "veiculo": "Google · Avaliação pública",
+      "texto": "Ótimo local pra comprar lembranças de Campina Grande.",
+      "url": "https://www.google.com/maps/place/@-7.228484,-35.890456,17z/data=!4m10!3m9!1s0x7ac1e4126c5f923:0x3356f585edf2569d!5m2!4m1!1i2!8m2!3d-7.228484!4d-35.890456!9m1!1b1"
+    },
+    {
+      "id": "google-visitante-2021-02",
+      "autoria": "Bruna G.",
+      "nota": 4,
+      "data": "2021-02",
+      "veiculo": "Google · Avaliação pública",
+      "texto": "Tem lindas peças artesanais, desde roupas a souvenires.",
+      "url": "https://www.google.com/maps/place/@-7.228484,-35.890456,17z/data=!4m10!3m9!1s0x7ac1e4126c5f923:0x3356f585edf2569d!5m2!4m1!1i2!8m2!3d-7.228484!4d-35.890456!9m1!1b1"
+    }
+  ]
+}

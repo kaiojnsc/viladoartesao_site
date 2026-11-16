@@ -1,0 +1,170 @@
+/* Carrossel de fotografias (usado em Sobre a Vila e na página inicial). */
+.about-gallery {
+  margin-top: 3rem;
+  padding: 1.5rem 0 0;
+}
+
+.about-gallery__head {
+  margin-bottom: 1.25rem;
+}
+
+.about-gallery__head h2 {
+  margin-bottom: 0.5rem;
+}
+
+.about-gallery__carousel {
+  position: relative;
+  width: min(100%, 72rem);
+  margin: 0 auto;
+}
+
+.about-gallery__track {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: #f7efe7;
+  border: 1px solid rgba(74, 55, 35, 0.12);
+  box-shadow: 0 18px 45px rgba(45, 31, 17, 0.08);
+  transition: height 0.3s ease;
+}
+
+.about-gallery__slide {
+  display: none;
+  margin: 0;
+}
+
+.about-gallery__slide.is-active {
+  display: grid;
+  justify-items: center;
+}
+
+.about-gallery__slide img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: min(72vh, 52rem);
+  object-fit: contain;
+  object-position: center;
+  background: #f7efe7;
+}
+
+.about-gallery__slide figcaption {
+  padding: 0.75rem 1rem 1rem;
+  color: #594331;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.about-gallery__nav {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(30, 22, 15, 0.7);
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.about-gallery__nav:hover,
+.about-gallery__nav:focus-visible {
+  background: rgba(30, 22, 15, 0.88);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.about-gallery__nav:focus-visible,
+.about-gallery__dot:focus-visible {
+  outline: 3px solid #a15d32;
+  outline-offset: 3px;
+}
+
+.about-gallery__nav--prev {
+  left: 1rem;
+}
+
+.about-gallery__nav--next {
+  right: 1rem;
+}
+
+.about-gallery__dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-top: 0.75rem;
+}
+
+.about-gallery__dot {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.about-gallery__dot::before {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: rgba(89, 67, 49, 0.36);
+  content: "";
+}
+
+.about-gallery__dot[aria-current="true"]::before {
+  width: 0.9rem;
+  height: 0.9rem;
+  background: #a15d32;
+}
+
+.about-gallery__credit {
+  margin-top: 0.5rem;
+  color: #65584c;
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+@media (max-width: 48rem) {
+  .about-gallery {
+    margin-top: 2.25rem;
+  }
+
+  .about-gallery__carousel {
+    max-width: 100%;
+  }
+
+  .about-gallery__slide img {
+    max-height: 68svh;
+  }
+
+  .about-gallery__nav {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.5rem;
+  }
+
+  .about-gallery__nav--prev {
+    left: 0.5rem;
+  }
+
+  .about-gallery__nav--next {
+    right: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-gallery__track,
+  .about-gallery__nav {
+    transition: none;
+  }
+}

@@ -1,28 +1,49 @@
 import { renderSharedLayout } from "./components.js";
+import { getCurrentLanguage, initI18n } from "./i18n.js";
 import { initNavigation } from "./navigation.js";
-import { initArtisans } from "./artisans.js";
-import { initStories } from "./stories.js";
-import { initEvents } from "./events.js";
-import { initItineraries } from "./itineraries.js";
-import { initReviews } from "./reviews.js";
-import { initMapContainers } from "./map.js";
-import { initFaq } from "./faq.js";
+import { initArtisanIndicators, initArtisans } from "./artisans.js";
+import { initMedia } from "./media.js";
 import { initBooking } from "./booking.js";
-import { initContact } from "./contact.js";
-import { initReveal } from "./reveal.js";
+import { initGalleryCarousels } from "./carousel.js";
+import { initEvents } from "./events.js";
+import { initReviews } from "./reviews.js";
+import { initFaq } from "./faq.js";
+import { siteConfig } from "./site-config.js";
 
+initI18n();
 renderSharedLayout();
 initNavigation();
+
+function renderOpeningHours() {
+  const hours = siteConfig.openingHours[getCurrentLanguage()];
+  if (!hours) {
+    console.error("Horário de funcionamento não configurado para o idioma atual.");
+    return;
+  }
+
+  document.querySelectorAll("[data-site-hours]").forEach((element) => {
+    element.textContent = hours;
+  });
+}
+
+function renderSiteAddress() {
+  document.querySelectorAll("[data-site-address]").forEach((element) => {
+    element.textContent = siteConfig.address;
+  });
+}
+
+document.addEventListener("vila:language-change", renderOpeningHours);
+renderOpeningHours();
+renderSiteAddress();
+
 initArtisans();
-initStories();
-initEvents();
-initItineraries();
-initReviews();
-initMapContainers();
-initFaq();
+initArtisanIndicators();
+initMedia();
 initBooking();
-initContact();
-initReveal();
+initGalleryCarousels();
+initEvents();
+initReviews();
+initFaq();
 
 const galleryItems = document.querySelectorAll('[data-gallery-item]');
 const galleryModal = document.getElementById('home-gallery-modal');
