@@ -59,6 +59,12 @@
   --shadow-raised: 0 0.5rem 1.5rem rgb(56 37 30 / 12%);
   --shadow-focus: 0 0 0 4px rgb(217 166 46 / 35%);
 
-  --transition-fast: 160ms ease;
-  --transition-normal: 220ms ease;
+  /* Movimento: use sempre estes tokens em transições e animações. */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 160ms;
+  --duration-normal: 240ms;
+  --duration-enter: 560ms;
+  --transition-fast: var(--duration-fast) var(--ease-out);
+  --transition-normal: var(--duration-normal) var(--ease-out);
 }

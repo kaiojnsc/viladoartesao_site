@@ -1,5 +1,7 @@
 import { translate } from "./i18n.js";
 
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
 function createTextElement(tagName, className, text) {
   const element = document.createElement(tagName);
   element.className = className;
@@ -66,7 +68,55 @@ function createQuestionItem(question, root) {
 
   answer.append(inner);
   item.append(summary, answer);
+
+  // A animação de abrir/fechar é controlada pela classe .is-expanded.
+  // O <details> só é fechado depois que a resposta termina de recolher,
+  // senão o navegador esconde o conteúdo antes da animação.
+  let collapseTimer = 0;
+
+  function finishCollapse() {
+    window.clearTimeout(collapseTimer);
+    if (!item.classList.contains("is-expanded")) item.open = false;
+  }
+
+  function expand() {
+    window.clearTimeout(collapseTimer);
+    item.open = true;
+    void answer.offsetHeight;
+    item.classList.add("is-expanded");
+    summary.setAttribute("aria-expanded", "true");
+  }
+
+  function collapse() {
+    item.classList.remove("is-expanded");
+    summary.setAttribute("aria-expanded", "false");
+    if (reducedMotionQuery.matches) {
+      finishCollapse();
+      return;
+    }
+    collapseTimer = window.setTimeout(finishCollapse, 400);
+  }
+
+  summary.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (item.classList.contains("is-expanded")) {
+      collapse();
+    } else {
+      expand();
+    }
+  });
+
+  answer.addEventListener("transitionend", (event) => {
+    if (event.target === answer && event.propertyName === "grid-template-rows") finishCollapse();
+  });
+
+  // Abertura feita pelo navegador (ex.: busca na página) também sincroniza o estado.
   item.addEventListener("toggle", () => {
+    if (item.open && !item.classList.contains("is-expanded")) {
+      item.classList.add("is-expanded");
+    } else if (!item.open) {
+      item.classList.remove("is-expanded");
+    }
     summary.setAttribute("aria-expanded", String(item.open));
   });
 

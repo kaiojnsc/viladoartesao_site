@@ -21,13 +21,25 @@ function initCarousel(carousel) {
     });
   };
 
-  const showSlide = (index) => {
-    currentIndex = (index + slides.length) % slides.length;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  // direction: 1 = próxima, -1 = anterior, 0 = sem animação.
+  const showSlide = (index, direction = 0) => {
+    const nextIndex = (index + slides.length) % slides.length;
+    if (nextIndex === currentIndex) return;
+    currentIndex = nextIndex;
 
     slides.forEach((slide, i) => {
       slide.hidden = i !== currentIndex;
       slide.classList.toggle('is-active', i === currentIndex);
+      slide.classList.remove('is-entering-next', 'is-entering-prev');
     });
+
+    if (direction !== 0 && !reduceMotion.matches) {
+      const slide = slides[currentIndex];
+      void slide.offsetWidth;
+      slide.classList.add(direction > 0 ? 'is-entering-next' : 'is-entering-prev');
+    }
 
     dots.forEach((dot, i) => {
       if (i === currentIndex) {
@@ -40,23 +52,52 @@ function initCarousel(carousel) {
     updateTrackHeight();
   };
 
-  prevButton?.addEventListener('click', () => showSlide(currentIndex - 1));
-  nextButton?.addEventListener('click', () => showSlide(currentIndex + 1));
+  prevButton?.addEventListener('click', () => showSlide(currentIndex - 1, -1));
+  nextButton?.addEventListener('click', () => showSlide(currentIndex + 1, 1));
 
   dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => showSlide(index));
+    dot.addEventListener('click', () => showSlide(index, Math.sign(index - currentIndex)));
   });
 
   carousel.addEventListener('keydown', (event) => {
     if (event.altKey || event.ctrlKey || event.metaKey) return;
     if (event.key === 'ArrowLeft') {
       event.preventDefault();
-      showSlide(currentIndex - 1);
+      showSlide(currentIndex - 1, -1);
     } else if (event.key === 'ArrowRight') {
       event.preventDefault();
-      showSlide(currentIndex + 1);
+      showSlide(currentIndex + 1, 1);
     }
   });
+
+  // Arrastar com o dedo (celular e tablet).
+  const SWIPE_MIN_DISTANCE = 40;
+  let touchStart = null;
+
+  track.addEventListener('touchstart', (event) => {
+    if (event.touches.length !== 1) return;
+    const touch = event.touches[0];
+    touchStart = { x: touch.clientX, y: touch.clientY };
+  }, { passive: true });
+
+  track.addEventListener('touchend', (event) => {
+    if (!touchStart) return;
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - touchStart.x;
+    const deltaY = touch.clientY - touchStart.y;
+    touchStart = null;
+
+    if (Math.abs(deltaX) < SWIPE_MIN_DISTANCE || Math.abs(deltaX) < Math.abs(deltaY)) return;
+    if (deltaX < 0) {
+      showSlide(currentIndex + 1, 1);
+    } else {
+      showSlide(currentIndex - 1, -1);
+    }
+  }, { passive: true });
+
+  track.addEventListener('touchcancel', () => {
+    touchStart = null;
+  }, { passive: true });
 
   slides.forEach((slide) => {
     slide.querySelector('img')?.addEventListener('load', updateTrackHeight);

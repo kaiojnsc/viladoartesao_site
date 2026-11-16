@@ -1,0 +1,157 @@
+/* Animações e transições do site.
+   Regras:
+   - animar apenas transform e opacity;
+   - usar os tokens de movimento de variables.css (--ease-out, --duration-*);
+   - nenhuma animação em loop;
+   - movimento reduzido é tratado em accessibility.css.
+   Este arquivo não define cores nem tipografia. */
+
+/* ---------- Transição entre páginas (View Transitions) ---------- */
+/* Navegadores sem suporte simplesmente trocam de página sem efeito. */
+@view-transition {
+  navigation: auto;
+}
+
+/* O header fica fixo durante a troca; só o conteúdo faz o fade. */
+#site-header {
+  view-transition-name: site-header;
+}
+
+::view-transition-old(root) {
+  animation: var(--duration-fast) var(--ease-in-out) both vt-fade-out;
+}
+
+::view-transition-new(root) {
+  animation: var(--duration-normal) var(--ease-out) both vt-fade-in;
+}
+
+::view-transition-group(site-header) {
+  animation: none;
+}
+
+@keyframes vt-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+}
+
+/* ---------- Entrada ao rolar (js/reveal.js) ---------- */
+/* O estado escondido só existe quando o JS adiciona .js-reveal ao <html>;
+   sem JavaScript todo o conteúdo fica visível. */
+.js-reveal [data-reveal]:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(1.25rem);
+}
+
+/* Enquanto entra, usa a transição de entrada; ao terminar (.is-revealed),
+   o elemento volta às próprias transições e hovers definidos em cada página. */
+.js-reveal [data-reveal]:not(.is-revealed) {
+  transition:
+    opacity var(--duration-enter) var(--ease-out),
+    transform var(--duration-enter) var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* ---------- Menu do celular ---------- */
+.menu-toggle__icon path {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    transform var(--duration-normal) var(--ease-out),
+    opacity var(--duration-fast) var(--ease-out);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__line--top {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__line--middle {
+  opacity: 0;
+  transform: scaleX(0.3);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__line--bottom {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+@media (max-width: 60rem) {
+  .primary-nav.is-open,
+  .primary-nav.is-open ~ .language-switcher {
+    animation: menu-slide-in var(--duration-normal) var(--ease-out) both;
+  }
+
+  .primary-nav.is-open a {
+    animation: menu-item-in var(--duration-normal) var(--ease-out) both;
+  }
+
+  .primary-nav.is-open a:nth-child(2) { animation-delay: 30ms; }
+  .primary-nav.is-open a:nth-child(3) { animation-delay: 60ms; }
+  .primary-nav.is-open a:nth-child(4) { animation-delay: 90ms; }
+  .primary-nav.is-open a:nth-child(5) { animation-delay: 120ms; }
+  .primary-nav.is-open a:nth-child(6) { animation-delay: 150ms; }
+
+  .primary-nav.is-closing,
+  .primary-nav.is-closing ~ .language-switcher {
+    animation: menu-slide-out var(--duration-fast) var(--ease-in-out) both;
+  }
+}
+
+@keyframes menu-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+}
+
+@keyframes menu-slide-out {
+  to {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+}
+
+@keyframes menu-item-in {
+  from {
+    opacity: 0;
+    transform: translateX(-0.5rem);
+  }
+}
+
+/* ---------- Catálogo de artesãos ---------- */
+.artisan-catalog:not([hidden]) {
+  animation: fade-up var(--duration-enter) var(--ease-out) both;
+}
+
+.artisan-results-status.is-updated {
+  animation: fade-in var(--duration-normal) var(--ease-out) both;
+}
+
+.artisan-results-grid.is-updated > * {
+  animation: fade-up var(--duration-normal) var(--ease-out) both;
+}
+
+.artisan-results-grid.is-updated > :nth-child(2) { animation-delay: 30ms; }
+.artisan-results-grid.is-updated > :nth-child(3) { animation-delay: 60ms; }
+.artisan-results-grid.is-updated > :nth-child(4) { animation-delay: 90ms; }
+.artisan-results-grid.is-updated > :nth-child(5) { animation-delay: 120ms; }
+.artisan-results-grid.is-updated > :nth-child(n + 6) { animation-delay: 150ms; }
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}

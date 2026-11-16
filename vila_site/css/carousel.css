@@ -26,7 +26,8 @@
   background: #f7efe7;
   border: 1px solid rgba(74, 55, 35, 0.12);
   box-shadow: 0 18px 45px rgba(45, 31, 17, 0.08);
-  transition: height 0.3s ease;
+  transition: height var(--duration-normal) var(--ease-out);
+  touch-action: pan-y;
 }
 
 .about-gallery__slide {
@@ -37,6 +38,30 @@
 .about-gallery__slide.is-active {
   display: grid;
   justify-items: center;
+}
+
+/* Troca de foto: a nova entra com fade e um leve deslocamento
+   na direção da navegação (classes aplicadas por js/carousel.js). */
+.about-gallery__slide.is-entering-next {
+  animation: gallery-enter-next var(--duration-normal) var(--ease-out) both;
+}
+
+.about-gallery__slide.is-entering-prev {
+  animation: gallery-enter-prev var(--duration-normal) var(--ease-out) both;
+}
+
+@keyframes gallery-enter-next {
+  from {
+    opacity: 0;
+    transform: translateX(1.5rem);
+  }
+}
+
+@keyframes gallery-enter-prev {
+  from {
+    opacity: 0;
+    transform: translateX(-1.5rem);
+  }
 }
 
 .about-gallery__slide img {
@@ -71,7 +96,7 @@
   font-size: 1.8rem;
   line-height: 1;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: background var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
 }
 
 .about-gallery__nav:hover,
@@ -159,12 +184,5 @@
 
   .about-gallery__nav--next {
     right: 0.5rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .about-gallery__track,
-  .about-gallery__nav {
-    transition: none;
   }
 }

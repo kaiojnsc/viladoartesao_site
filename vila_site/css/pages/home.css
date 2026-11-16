@@ -344,7 +344,7 @@
   padding: 0;
   text-align: left;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
 
 .gallery-slot:hover,
@@ -423,7 +423,7 @@
   background: rgb(29 23 19 / 72%);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
+  transition: opacity var(--transition-fast), visibility var(--transition-fast);
 }
 
 .gallery-modal.is-open {
@@ -1088,12 +1088,5 @@
 
   .location-card .button {
     width: 100%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .segment-card,
-  .text-link span {
-    transition: none;
   }
 }

@@ -8,6 +8,7 @@ import { initGalleryCarousels } from "./carousel.js";
 import { initEvents } from "./events.js";
 import { initReviews } from "./reviews.js";
 import { initFaq } from "./faq.js";
+import { initReveal } from "./reveal.js";
 import { siteConfig } from "./site-config.js";
 
 initI18n();
@@ -44,6 +45,7 @@ initGalleryCarousels();
 initEvents();
 initReviews();
 initFaq();
+initReveal();
 
 const galleryItems = document.querySelectorAll('[data-gallery-item]');
 const galleryModal = document.getElementById('home-gallery-modal');

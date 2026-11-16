@@ -192,7 +192,7 @@ export function initArtisans() {
       ? `Exibindo o segmento: ${category}.`
       : "";
 
-    if (artisans) renderResults();
+    if (artisans) renderResults({ animate: true });
   }
 
   function populateCategoryFilter() {
@@ -224,7 +224,7 @@ export function initArtisans() {
     }
   }
 
-  function renderResults() {
+  function renderResults({ animate = false } = {}) {
     if (!artisans) return;
 
     const nameQuery = normalizeText(search.value);
@@ -240,6 +240,18 @@ export function initArtisans() {
       ? "1 artesão encontrado."
       : `${filteredArtisans.length} artesãos encontrados.`;
     emptyState.hidden = filteredArtisans.length > 0;
+
+    // Ao trocar de segmento, reinicia o fade da lista para indicar a mudança.
+    if (animate) {
+      for (const element of [resultsStatus, resultContainer]) {
+        element.classList.remove("is-updated");
+        void element.offsetWidth;
+        element.classList.add("is-updated");
+      }
+    } else {
+      resultsStatus.classList.remove("is-updated");
+      resultContainer.classList.remove("is-updated");
+    }
   }
 
   function closeCatalog() {
@@ -284,7 +296,7 @@ export function initArtisans() {
       closeCatalog();
     }
   });
-  search.addEventListener("input", renderResults);
+  search.addEventListener("input", () => renderResults());
   categoryFilter.addEventListener("change", () => setSelectedCategory(categoryFilter.value));
 
   for (const button of segmentButtons) {

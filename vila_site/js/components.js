@@ -47,7 +47,9 @@ export function renderSharedLayout() {
           </a>
           <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
             <svg class="menu-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M4 7h16M4 12h16M4 17h16"></path>
+              <path class="menu-toggle__line menu-toggle__line--top" d="M4 7h16"></path>
+              <path class="menu-toggle__line menu-toggle__line--middle" d="M4 12h16"></path>
+              <path class="menu-toggle__line menu-toggle__line--bottom" d="M4 17h16"></path>
             </svg>
             <span class="menu-toggle__label">Menu</span>
           </button>

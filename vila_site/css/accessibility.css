@@ -1,10 +1,27 @@
+/* Movimento reduzido: regra única do site.
+   Quando o sistema pede menos movimento, todas as transições e animações
+   ficam instantâneas. Os scripts
+   (reveal.js, carousel.js, faq.js, navigation.js) também consultam
+   prefers-reduced-motion e pulam as animações. */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   *,
   *::before,
   *::after {
     scroll-behavior: auto !important;
     animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
   }
 }
