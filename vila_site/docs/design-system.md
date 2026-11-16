@@ -5,12 +5,13 @@ The site uses the stylesheets in `css/` without a build step. Add or adjust desi
 ## Visual foundations
 
 - **Cotton and warm white** are the page and surface colors; the subtle dotted background texture is CSS-only.
-- **Coffee and leather** are used for body text, headings, navigation, and primary actions.
-- **Terracotta, mustard, and olive** are cultural accents, not large areas of small text. Dark text sits on light mustard surfaces.
+- **Navy and orange** from the Empreendedores do Agora kit are used for body text, headings, navigation, and primary actions.
+- **Mustard, olive, and the warm cotton background** preserve the Vila do Artesão's local and handcrafted character as secondary accents.
 - **Lora** is reserved for display and institutional headings; **Nunito Sans** is used for navigation, body copy, controls, and buttons.
 - The header's small colored pennant edge and the cards' understated woven-media texture provide local character without competing with content.
 
 Google Fonts are loaded as progressive enhancement. The system font fallbacks remain legible if the network or font service is unavailable.
+The Vila do Artesão remains the destination brand; Empreendedores do Agora appears as an institutional partner signature in the footer.
 
 ## Component classes
 

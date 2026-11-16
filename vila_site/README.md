@@ -18,8 +18,8 @@ O site não tem etapa de compilação. O arquivo `index.html` na raiz é a pági
 | `index.html` | Página inicial e ponto de entrada do site. |
 | `pages/` | Páginas institucionais: sobre, artesãos, histórias, calendário, roteiros, avaliações, mapa, FAQ, agendamento, contato e privacidade. |
 | `assets/img/` | Fotografias autorizadas e imagens de conteúdo. |
-| `assets/logos/` | Logos da Vila do Artesão e da UNIFACISA. |
-| `assets/mascote/` | Arquivos da mascote. |
+| `assets/logos/` | Logos da Vila do Artesão, da UNIFACISA e da identidade institucional Empreendedores do Agora. |
+| `assets/mascote/` | Arquivos da mascote, em PNG e SVG. |
 | `assets/mapa/` | Arquivo do mapa a ser fornecido para substituir o espaço provisório. |
 | `css/` | Reset, variáveis visuais, estilos globais, componentes, responsividade e estilos por página. |
 | `js/` | Inicialização do site, cabeçalho/rodapé compartilhados e módulos interativos. |

@@ -3,24 +3,24 @@
 
   --color-cotton: #f8f2e8;
   --color-warm-white: #fffcf7;
-  --color-leather: #75452f;
-  --color-coffee: #38251e;
-  --color-terracotta: #bd6743;
-  --color-terracotta-action: #a74e30;
+  --color-leather: #173863;
+  --color-coffee: #102947;
+  --color-terracotta: #e85a1a;
+  --color-terracotta-action: #cf4810;
   --color-mustard: #d9a62e;
   --color-olive: #647447;
-  --color-text: #30251f;
-  --color-text-muted: #5d5149;
-  --color-border: #d9cbbb;
-  --color-border-strong: #bca995;
+  --color-text: #1d2b3d;
+  --color-text-muted: #526170;
+  --color-border: #d4d8dc;
+  --color-border-strong: #aeb8c2;
   --color-success-bg: #edf1e8;
   --color-success-text: #3f512d;
   --color-warning-bg: #fbf1d8;
   --color-warning-text: #59400b;
   --color-error-bg: #f8e9e3;
   --color-error-text: #762f1d;
-  --color-info-bg: #f1e9df;
-  --color-info-text: #513e32;
+  --color-info-bg: #eaf0f7;
+  --color-info-text: #173863;
 
   --font-display: "Lora", Georgia, serif;
   --font-body: "Nunito Sans", "Segoe UI", sans-serif;

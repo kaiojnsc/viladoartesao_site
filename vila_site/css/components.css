@@ -492,6 +492,12 @@ textarea.form-field__control {
   object-fit: contain;
 }
 
+.footer-partner-logo {
+  display: block;
+  width: min(100%, 15rem);
+  height: auto;
+}
+
 .footer-credit,
 .footer-contact p {
   max-width: 34rem;

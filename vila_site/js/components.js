@@ -70,6 +70,7 @@ export function renderSharedLayout() {
         <div class="footer-inner">
           <div class="footer-brand">
             <img class="footer-unifacisa-logo" src="${unifacisaLogo}" alt="UNIFACISA — Centro Universitário" width="370" height="240" loading="lazy" decoding="async">
+            <img class="footer-partner-logo" src="${new URL("assets/logos/empreendedores-do-agora-branco.svg", root).href}" alt="Empreendedores do Agora" width="600" height="180" loading="lazy" decoding="async">
             <p class="footer-credit">Site desenvolvido como projeto de extensão universitária da UNIFACISA, em parceria com a Vila do Artesão e a Casa do Empreendedor.</p>
           </div>
           <nav class="footer-nav" aria-label="Links do site">

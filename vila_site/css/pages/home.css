@@ -80,7 +80,7 @@
   object-fit: cover;
 }
 
-.hero-photo-placeholder {
+.hero-mascot {
   position: relative;
   display: flex;
   min-height: clamp(20rem, 38vw, 31rem);
@@ -90,7 +90,7 @@
   overflow: hidden;
   padding: var(--space-8);
   border: 1px solid var(--color-border);
-  border-radius: 48% 48% var(--radius-lg) var(--radius-lg);
+  border-radius: 50% 50% var(--radius-lg) var(--radius-lg) / 28% 28% var(--radius-lg) var(--radius-lg);
   background:
     radial-gradient(ellipse at 50% 40%, rgb(217 166 46 / 15%), transparent 58%),
     repeating-linear-gradient(135deg, transparent 0 1.15rem, rgb(117 69 47 / 4%) 1.15rem 1.22rem),
@@ -99,8 +99,8 @@
   text-align: center;
 }
 
-.hero-photo-placeholder::before,
-.hero-photo-placeholder::after {
+.hero-mascot::before,
+.hero-mascot::after {
   position: absolute;
   width: 7rem;
   height: 7rem;
@@ -109,67 +109,55 @@
   content: "";
 }
 
-.hero-photo-placeholder::before {
-  top: 10%;
-  right: 8%;
+.hero-mascot::before {
+  top: 14%;
+  right: 6%;
+  z-index: 0;
 }
 
-.hero-photo-placeholder::after {
-  bottom: 9%;
-  left: 8%;
-  width: 4.5rem;
-  height: 4.5rem;
+.hero-mascot::after {
+  bottom: 4%;
+  left: 5%;
+  width: 3rem;
+  height: 3rem;
 }
 
-.hero-photo-placeholder__ornament {
-  position: absolute;
-  top: 0;
-  left: 15%;
-  width: 70%;
-  height: 0.45rem;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--color-terracotta) 0 1.5rem,
-    var(--color-mustard) 1.5rem 3rem,
-    var(--color-olive) 3rem 4.5rem
-  );
-  clip-path: polygon(0 0, 100% 0, 100% 55%, 93% 100%, 86% 55%, 79% 100%, 72% 55%, 65% 100%, 58% 55%, 51% 100%, 44% 55%, 37% 100%, 30% 55%, 23% 100%, 16% 55%, 9% 100%, 0 55%);
+.hero-mascot__label {
+  position: relative;
+  z-index: 1;
+  margin-bottom: var(--space-3);
+  color: var(--color-terracotta-action);
+  font-size: var(--font-size-xs);
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-.hero-photo-placeholder__icon {
-  display: grid;
-  width: 4.5rem;
-  height: 4.5rem;
-  place-items: center;
-  border: 1px solid var(--color-border);
-  border-radius: 50%;
-  background: var(--color-cotton);
-  color: var(--color-leather);
+.hero-mascot img {
+  position: relative;
+  z-index: 1;
+  width: min(62%, 17rem);
+  height: auto;
+  max-height: 17rem;
+  object-fit: contain;
 }
 
-.hero-photo-placeholder__icon svg {
-  width: 2rem;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.6;
-}
-
-.hero-photo-placeholder figcaption {
+.hero-mascot figcaption {
+  position: relative;
+  z-index: 1;
   display: grid;
   gap: var(--space-1);
   max-width: 16rem;
   margin-top: var(--space-4);
 }
 
-.hero-photo-placeholder figcaption strong {
+.hero-mascot figcaption strong {
   color: var(--color-coffee);
   font-family: var(--font-display);
   font-size: var(--font-size-lg);
 }
 
-.hero-photo-placeholder figcaption span {
+.hero-mascot figcaption span {
   color: var(--color-text-muted);
   font-size: var(--font-size-xs);
 }
@@ -933,7 +921,7 @@
     max-width: 40rem;
   }
 
-  .hero-photo-placeholder {
+  .hero-mascot {
     min-height: 18rem;
     border-radius: var(--radius-lg);
   }
