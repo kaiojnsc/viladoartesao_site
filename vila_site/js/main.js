@@ -9,6 +9,7 @@ import { initMapContainers } from "./map.js";
 import { initFaq } from "./faq.js";
 import { initBooking } from "./booking.js";
 import { initContact } from "./contact.js";
+import { initReveal } from "./reveal.js";
 
 renderSharedLayout();
 initNavigation();
@@ -21,6 +22,7 @@ initMapContainers();
 initFaq();
 initBooking();
 initContact();
+initReveal();
 
 const galleryItems = document.querySelectorAll('[data-gallery-item]');
 const galleryModal = document.getElementById('home-gallery-modal');
