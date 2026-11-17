@@ -1,3 +1,4 @@
+import { clearSkeleton, showSkeleton } from "./skeleton.js";
 function textElement(tagName, className, text) {
   const element = document.createElement(tagName);
   element.className = className;
@@ -14,6 +15,7 @@ function createVideoCard(video) {
   const iframe = document.createElement("iframe");
   iframe.src = `https://www.youtube-nocookie.com/embed/${video.id}`;
   iframe.title = video.titulo;
+  iframe.dataset.i18nIgnore = "";
   iframe.loading = "lazy";
   iframe.referrerPolicy = "strict-origin-when-cross-origin";
   iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
@@ -22,59 +24,20 @@ function createVideoCard(video) {
 
   const body = document.createElement("div");
   body.className = "review-video-card__body";
+  const title = textElement("h3", "review-video-card__title", video.titulo);
   body.append(
-    textElement("h3", "review-video-card__title", video.titulo),
+    title,
     textElement("p", "review-video-card__description", video.descricao),
   );
+  const link = document.createElement("a");
+  link.className = "review-video-card__link";
+  link.href = `https://www.youtube.com/watch?v=${video.id}`;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.textContent = "Abrir vídeo no YouTube";
+  body.append(link);
   card.append(player, body);
   return card;
-}
-
-function isValidFormUrl(value) {
-  if (!value) return true;
-  try {
-    const url = new URL(value);
-    return url.protocol === "https:"
-      && url.hostname === "docs.google.com"
-      && /^\/forms\/d\/(?:e\/)?[^/]+\/viewform\/?$/.test(url.pathname);
-  } catch {
-    return false;
-  }
-}
-
-function configureForm(formUrl) {
-  const area = document.querySelector("#review-form-area");
-  const notice = document.querySelector("#review-form-notice");
-  if (!formUrl) return;
-
-  if (!isValidFormUrl(formUrl)) {
-    throw new Error("O endereço do formulário externo não é um URL válido do Google Forms.");
-  }
-
-  const formUrlObject = new URL(formUrl);
-  const embeddedFormUrl = new URL(formUrl);
-  embeddedFormUrl.searchParams.set("embedded", "true");
-  notice.textContent = "Este formulário é hospedado pelo Google Forms. O site não recebe nem armazena as respostas.";
-
-  const form = document.createElement("iframe");
-  form.className = "review-form-embed";
-  form.src = embeddedFormUrl.href;
-  form.title = "Formulário externo para avaliação da visita";
-  form.loading = "lazy";
-  form.referrerPolicy = "strict-origin-when-cross-origin";
-  form.setAttribute("allow", "fullscreen");
-  form.setAttribute("aria-describedby", "review-form-notice");
-  form.addEventListener("load", () => {
-    notice.textContent = "Formulário externo carregado. Ao enviar, confira a confirmação apresentada pelo Google Forms.";
-  }, { once: true });
-
-  const externalLink = document.createElement("a");
-  externalLink.className = "review-form-card__external-link";
-  externalLink.href = formUrlObject.href;
-  externalLink.target = "_blank";
-  externalLink.rel = "noopener noreferrer";
-  externalLink.textContent = "Abrir formulário em outra aba";
-  area.replaceChildren(notice, form, externalLink);
 }
 
 export async function initReviews() {
@@ -83,6 +46,7 @@ export async function initReviews() {
 
   const status = document.querySelector("#reviews-videos-status");
   const error = document.querySelector("#reviews-videos-error");
+  showSkeleton(grid, { count: 3 });
 
   try {
     const response = await fetch(new URL("../data/avaliacoes.json", import.meta.url));
@@ -103,16 +67,16 @@ export async function initReviews() {
         || !video.titulo.trim()
         || typeof video.descricao !== "string"
       ))
-      || typeof data.formulario_externo_url !== "string"
     ) {
       throw new Error("O arquivo de avaliações possui formato inválido.");
     }
 
+    grid.removeAttribute("aria-busy");
     grid.replaceChildren(...data.videos.map(createVideoCard));
     status.textContent = `${data.videos.length} vídeos disponíveis.`;
-    configureForm(data.formulario_externo_url);
   } catch (loadError) {
-    console.error("Falha ao carregar os vídeos e o formulário de avaliações.", loadError);
+    console.error("Falha ao carregar os vídeos da Vila.", loadError);
+    clearSkeleton(grid);
     status.textContent = "";
     error.hidden = false;
   }

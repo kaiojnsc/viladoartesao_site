@@ -1,3 +1,8 @@
+import { translate } from "./i18n.js";
+import { clearSkeleton, showSkeleton } from "./skeleton.js";
+
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
 function createTextElement(tagName, className, text) {
   const element = document.createElement(tagName);
   element.className = className;
@@ -37,7 +42,9 @@ function createAnswerLink(link, root) {
 function createQuestionItem(question, root) {
   const item = document.createElement("details");
   item.className = "faq-item";
-  item.dataset.searchText = normalizeText(`${question.pergunta} ${question.resposta}`);
+  item.dataset.searchText = normalizeText(
+    `${translate(question.categoria)} ${translate(question.pergunta)} ${translate(question.resposta)}`,
+  );
 
   const summary = document.createElement("summary");
   summary.className = "faq-item__question";
@@ -58,18 +65,59 @@ function createQuestionItem(question, root) {
   inner.className = "faq-item__answer";
   inner.append(createTextElement("p", "", question.resposta));
 
-  if (question.provisoria) {
-    inner.append(createTextElement(
-      "p",
-      "faq-item__pending",
-      "Resposta provisória — aguardando revisão da equipe responsável.",
-    ));
-  }
   if (question.link) inner.append(createAnswerLink(question.link, root));
 
   answer.append(inner);
   item.append(summary, answer);
+
+  // A animação de abrir/fechar é controlada pela classe .is-expanded.
+  // O <details> só é fechado depois que a resposta termina de recolher,
+  // senão o navegador esconde o conteúdo antes da animação.
+  let collapseTimer = 0;
+
+  function finishCollapse() {
+    window.clearTimeout(collapseTimer);
+    if (!item.classList.contains("is-expanded")) item.open = false;
+  }
+
+  function expand() {
+    window.clearTimeout(collapseTimer);
+    item.open = true;
+    void answer.offsetHeight;
+    item.classList.add("is-expanded");
+    summary.setAttribute("aria-expanded", "true");
+  }
+
+  function collapse() {
+    item.classList.remove("is-expanded");
+    summary.setAttribute("aria-expanded", "false");
+    if (reducedMotionQuery.matches) {
+      finishCollapse();
+      return;
+    }
+    collapseTimer = window.setTimeout(finishCollapse, 400);
+  }
+
+  summary.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (item.classList.contains("is-expanded")) {
+      collapse();
+    } else {
+      expand();
+    }
+  });
+
+  answer.addEventListener("transitionend", (event) => {
+    if (event.target === answer && event.propertyName === "grid-template-rows") finishCollapse();
+  });
+
+  // Abertura feita pelo navegador (ex.: busca na página) também sincroniza o estado.
   item.addEventListener("toggle", () => {
+    if (item.open && !item.classList.contains("is-expanded")) {
+      item.classList.add("is-expanded");
+    } else if (!item.open) {
+      item.classList.remove("is-expanded");
+    }
     summary.setAttribute("aria-expanded", String(item.open));
   });
 
@@ -86,7 +134,6 @@ function isValidQuestion(question) {
     && question.categoria.trim().length > 0
     && typeof question.resposta === "string"
     && question.resposta.trim().length > 0
-    && typeof question.provisoria === "boolean"
     && (!question.link || (
       typeof question.link.texto === "string"
       && typeof question.link.url === "string"
@@ -102,6 +149,7 @@ export async function initFaq() {
   const status = document.querySelector("#faq-results-status");
   const emptyState = document.querySelector("#faq-empty-state");
   const errorMessage = document.querySelector("#faq-error");
+  showSkeleton(list, { count: 4, variant: "row" });
 
   try {
     const response = await fetch(new URL("../data/faq.json", import.meta.url));
@@ -118,8 +166,10 @@ export async function initFaq() {
       throw new Error("O arquivo de perguntas frequentes possui formato inválido.");
     }
 
+    clearSkeleton(list);
     const root = new URL("../", import.meta.url);
     const categories = new Map();
+    const searchableItems = [];
     for (const question of questions) {
       if (!categories.has(question.categoria)) {
         const section = document.createElement("section");
@@ -133,7 +183,9 @@ export async function initFaq() {
       }
 
       const category = categories.get(question.categoria);
-      category.items.append(createQuestionItem(question, root));
+      const item = createQuestionItem(question, root);
+      category.items.append(item);
+      searchableItems.push({ item, question });
     }
 
     function renderResults() {
@@ -159,6 +211,14 @@ export async function initFaq() {
     }
 
     input.addEventListener("input", renderResults);
+    document.addEventListener("vila:language-change", () => {
+      for (const { item, question } of searchableItems) {
+        item.dataset.searchText = normalizeText(
+          `${translate(question.categoria)} ${translate(question.pergunta)} ${translate(question.resposta)}`,
+        );
+      }
+      renderResults();
+    });
     clearButton.addEventListener("click", () => {
       input.value = "";
       input.focus();
@@ -167,6 +227,7 @@ export async function initFaq() {
     renderResults();
   } catch (loadError) {
     console.error("Falha ao carregar as perguntas frequentes da Vila.", loadError);
+    clearSkeleton(list);
     status.textContent = "";
     errorMessage.hidden = false;
   }

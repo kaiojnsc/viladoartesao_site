@@ -1,0 +1,270 @@
+/* Animações e transições do site.
+   Regras:
+   - animar apenas transform e opacity;
+   - usar os tokens de movimento de variables.css (--ease-out, --duration-*);
+   - nenhuma animação em loop;
+   - movimento reduzido é tratado em accessibility.css.
+   Este arquivo não define cores nem tipografia. */
+
+/* ---------- Transição entre páginas (View Transitions) ---------- */
+/* Navegadores sem suporte simplesmente trocam de página sem efeito. */
+@view-transition {
+  navigation: auto;
+}
+
+/* O header fica fixo durante a troca; só o conteúdo faz o fade. */
+#site-header {
+  view-transition-name: site-header;
+}
+
+::view-transition-old(root) {
+  animation: var(--duration-fast) var(--ease-in-out) both vt-fade-out;
+}
+
+::view-transition-new(root) {
+  animation: var(--duration-normal) var(--ease-out) both vt-fade-in;
+}
+
+::view-transition-group(site-header) {
+  animation: none;
+}
+
+@keyframes vt-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+}
+
+/* ---------- Entrada ao rolar (js/reveal.js) ---------- */
+/* O estado escondido só existe quando o JS adiciona .js-reveal ao <html>;
+   sem JavaScript todo o conteúdo fica visível. */
+.js-reveal [data-reveal]:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(1.25rem);
+}
+
+/* Enquanto entra, usa a transição de entrada; ao terminar (.is-revealed),
+   o elemento volta às próprias transições e hovers definidos em cada página. */
+.js-reveal [data-reveal]:not(.is-revealed) {
+  transition:
+    opacity var(--duration-enter) var(--ease-out),
+    transform var(--duration-enter) var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* ---------- Menu do celular ---------- */
+.menu-toggle__icon path {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    transform var(--duration-normal) var(--ease-out),
+    opacity var(--duration-fast) var(--ease-out);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__line--top {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__line--middle {
+  opacity: 0;
+  transform: scaleX(0.3);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__line--bottom {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+@media (max-width: 60rem) {
+  .primary-nav.is-open,
+  .primary-nav.is-open ~ .language-switcher {
+    animation: menu-slide-in var(--duration-normal) var(--ease-out) both;
+  }
+
+  .primary-nav.is-open a {
+    animation: menu-item-in var(--duration-normal) var(--ease-out) both;
+  }
+
+  .primary-nav.is-open a:nth-child(2) { animation-delay: 30ms; }
+  .primary-nav.is-open a:nth-child(3) { animation-delay: 60ms; }
+  .primary-nav.is-open a:nth-child(4) { animation-delay: 90ms; }
+  .primary-nav.is-open a:nth-child(5) { animation-delay: 120ms; }
+  .primary-nav.is-open a:nth-child(6) { animation-delay: 150ms; }
+
+  .primary-nav.is-closing,
+  .primary-nav.is-closing ~ .language-switcher {
+    animation: menu-slide-out var(--duration-fast) var(--ease-in-out) both;
+  }
+}
+
+@keyframes menu-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+}
+
+@keyframes menu-slide-out {
+  to {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+}
+
+@keyframes menu-item-in {
+  from {
+    opacity: 0;
+    transform: translateX(-0.5rem);
+  }
+}
+
+/* ---------- Catálogo de artesãos ---------- */
+.artisan-catalog:not([hidden]) {
+  animation: fade-up var(--duration-enter) var(--ease-out) both;
+}
+
+.artisan-results-status.is-updated {
+  animation: fade-in var(--duration-normal) var(--ease-out) both;
+}
+
+.artisan-results-grid.is-updated > * {
+  animation: fade-up var(--duration-normal) var(--ease-out) both;
+}
+
+.artisan-results-grid.is-updated > :nth-child(2) { animation-delay: 30ms; }
+.artisan-results-grid.is-updated > :nth-child(3) { animation-delay: 60ms; }
+.artisan-results-grid.is-updated > :nth-child(4) { animation-delay: 90ms; }
+.artisan-results-grid.is-updated > :nth-child(5) { animation-delay: 120ms; }
+.artisan-results-grid.is-updated > :nth-child(n + 6) { animation-delay: 150ms; }
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* ---------- Fotos com fade ao carregar (js/image-fade.js) ---------- */
+img[data-fade] {
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+img[data-fade].is-loading {
+  opacity: 0;
+}
+
+/* ---------- Entrada do topo da página inicial ---------- */
+/* Animação única no carregamento: texto em sequência, depois o mascote. */
+.home-hero__copy > * {
+  animation: fade-up var(--duration-enter) var(--ease-out) both;
+}
+
+.home-hero__copy > :nth-child(2) { animation-delay: 80ms; }
+.home-hero__copy > :nth-child(3) { animation-delay: 160ms; }
+.home-hero__copy > :nth-child(4) { animation-delay: 240ms; }
+.home-hero__copy > :nth-child(5) { animation-delay: 320ms; }
+
+.hero-illustration {
+  animation: hero-art-in var(--duration-enter) var(--ease-out) 200ms both;
+}
+
+@keyframes hero-art-in {
+  from {
+    opacity: 0;
+    transform: translateY(1rem) scale(0.97);
+  }
+}
+
+/* ---------- Retorno ao toque/clique ---------- */
+.button,
+.header-cta,
+.menu-toggle,
+.segment-card,
+.artisan-segment {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.button:active,
+.header-cta:active,
+.menu-toggle:active,
+.artisan-segment:active,
+.segment-card:active {
+  transform: scale(0.97);
+  transition-duration: 80ms;
+}
+
+.about-gallery__nav:active {
+  transform: translateY(-50%) scale(0.92);
+  transition-duration: 80ms;
+}
+
+/* ---------- Placeholders de carregamento (js/skeleton.js) ---------- */
+.skeleton {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-warm-white);
+  animation: fade-in var(--duration-normal) var(--ease-out) both;
+}
+
+.skeleton--row {
+  margin-bottom: var(--space-3);
+}
+
+.skeleton__block,
+.skeleton__line {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: var(--color-cotton);
+}
+
+.skeleton__block {
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+}
+
+.skeleton__line {
+  height: 0.85rem;
+  border-radius: var(--radius-pill);
+}
+
+.skeleton__line--lg { width: 70%; height: 1.1rem; }
+.skeleton__line--md { width: 90%; }
+.skeleton__line--sm { width: 45%; }
+
+.skeleton--row .skeleton__line--md,
+.skeleton--row .skeleton__line--sm {
+  display: none;
+}
+
+.skeleton__block::after,
+.skeleton__line::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgb(255 252 247 / 70%), transparent);
+  content: "";
+  transform: translateX(-100%);
+  animation: skeleton-shimmer 1.4s var(--ease-in-out) infinite;
+}
+
+@keyframes skeleton-shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}

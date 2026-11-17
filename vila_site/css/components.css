@@ -94,6 +94,24 @@
   color: var(--color-leather);
 }
 
+.language-switcher select {
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-3);
+  border: var(--border-width) solid var(--color-leather);
+  border-radius: var(--radius-sm);
+  background: var(--color-warm-white);
+  color: var(--color-coffee);
+  font: inherit;
+  font-size: var(--font-size-sm);
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.language-switcher select:focus-visible {
+  outline: 3px solid var(--color-terracotta-action);
+  outline-offset: 2px;
+}
+
 .menu-toggle {
   display: none;
   min-width: 2.75rem;
@@ -462,39 +480,61 @@ textarea.form-field__control {
 }
 
 .site-footer {
-  margin-top: var(--space-8);
-  padding-top: var(--space-10);
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
   background: var(--color-coffee);
   color: var(--color-warm-white);
 }
 
 .footer-inner {
   display: grid;
-  grid-template-columns: minmax(15rem, 1.4fr) repeat(2, minmax(12rem, 1fr));
-  gap: var(--space-6);
-  padding-bottom: var(--space-8);
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, 0.9fr);
+  gap: var(--space-4);
+  padding-bottom: var(--space-4);
 }
 
 .footer-brand {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 
-.footer-unifacisa-logo {
-  display: block;
-  width: 10rem;
-  height: 5.5rem;
-  padding: var(--space-2);
+.footer-logos {
+  display: grid;
+  width: 100%;
+  max-width: 32rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.footer-logo-frame {
+  display: grid;
+  min-width: 0;
+  height: 3.25rem;
+  place-items: center;
+  padding: 0.4rem;
   border-radius: var(--radius-sm);
   background: var(--color-warm-white);
+}
+
+.footer-logo-frame--dark {
+  background: #35291f;
+}
+
+.footer-logo {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: 2.35rem;
   object-fit: contain;
 }
 
 .footer-credit,
 .footer-contact p {
   max-width: 34rem;
+  margin: 0;
   color: #f4e9dc;
   font-size: var(--font-size-xs);
 }
@@ -508,16 +548,16 @@ textarea.form-field__control {
 }
 
 .footer-heading {
-  margin: 0 0 var(--space-2);
+  margin: 0 0 var(--space-1);
   color: var(--color-warm-white);
   font-family: var(--font-display);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
 }
 
 .footer-nav a,
 .footer-contact a {
   display: inline-flex;
-  min-height: 2.75rem;
+  min-height: 2.25rem;
   align-items: center;
   color: var(--color-warm-white);
   font-size: var(--font-size-sm);
@@ -531,12 +571,12 @@ textarea.form-field__control {
 }
 
 .footer-contact p {
-  margin-top: var(--space-2);
+  margin-top: var(--space-1);
 }
 
 .footer-bottom {
   border-top: 1px solid rgb(255 252 247 / 25%);
-  padding: var(--space-4) var(--space-page);
+  padding: var(--space-3) var(--space-page);
   color: #f4e9dc;
   font-size: var(--font-size-xs);
   text-align: center;

@@ -1,0 +1,205 @@
+.visit-page {
+  max-width: none;
+  padding: 0 0 var(--space-10);
+}
+
+.visit-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(var(--space-8), 7vw, var(--space-12)) var(--space-page);
+  background:
+    radial-gradient(ellipse at 85% 20%, rgb(217 166 46 / 18%), transparent 25rem),
+    var(--color-warm-white);
+  text-align: center;
+}
+
+.visit-hero::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0.4rem;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-terracotta) 0 2rem,
+    var(--color-mustard) 2rem 4rem,
+    var(--color-olive) 4rem 6rem,
+    var(--color-leather) 6rem 8rem
+  );
+  clip-path: polygon(0 0, 100% 0, 100% 60%, 96% 100%, 92% 60%, 88% 100%, 84% 60%, 80% 100%, 76% 60%, 72% 100%, 68% 60%, 64% 100%, 60% 60%, 56% 100%, 52% 60%, 48% 100%, 44% 60%, 40% 100%, 36% 60%, 32% 100%, 28% 60%, 24% 100%, 20% 60%, 16% 100%, 12% 60%, 8% 100%, 4% 60%, 0 100%);
+  content: "";
+}
+
+.visit-hero h1 {
+  margin: var(--space-3) auto var(--space-4);
+  color: var(--color-leather);
+  font-size: clamp(2.35rem, 6vw, 4rem);
+}
+
+.visit-hero > p:last-child {
+  max-width: 46rem;
+  margin-inline: auto;
+  color: var(--color-text-muted);
+  font-size: clamp(var(--font-size-md), 2vw, var(--font-size-lg));
+}
+
+.visit-content {
+  display: grid;
+  width: min(100% - 2 * var(--space-page), var(--content-width));
+  gap: var(--space-8);
+  margin-inline: auto;
+  padding-top: clamp(var(--space-6), 5vw, var(--space-10));
+}
+
+.visit-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.visit-guidance-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+}
+
+.visit-card {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: clamp(var(--space-4), 3vw, var(--space-6));
+  border: 1px solid var(--color-border);
+  border-top: 0.3rem solid var(--color-mustard);
+  border-radius: var(--radius-lg);
+  background: var(--color-warm-white);
+  box-shadow: var(--shadow-card);
+}
+
+.visit-card--location {
+  border-top-color: var(--color-olive);
+}
+
+.visit-card__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: var(--color-leather);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.visit-card h2 {
+  color: var(--color-coffee);
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+}
+
+.visit-hours {
+  margin-top: var(--space-3);
+  color: var(--color-leather);
+  font-size: clamp(var(--font-size-md), 2vw, var(--font-size-lg));
+  font-weight: 850;
+}
+
+.visit-card__body {
+  min-width: 0;
+}
+
+.visit-card__body > p {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+}
+
+.visit-note {
+  font-size: var(--font-size-sm);
+}
+
+.visit-card__body .button {
+  margin-top: var(--space-4);
+}
+
+.visit-program {
+  display: grid;
+  gap: var(--space-4);
+  padding: clamp(var(--space-4), 4vw, var(--space-6));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-cotton);
+}
+
+.visit-program__heading h2 {
+  margin-top: var(--space-1);
+  color: var(--color-coffee);
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+}
+
+.visit-event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: var(--space-4);
+}
+
+.visit-event-grid:empty {
+  display: none;
+}
+
+.visit-event-card {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-top: 0.25rem solid var(--color-terracotta);
+  border-radius: var(--radius-md);
+  background: var(--color-warm-white);
+}
+
+.visit-event-card h3 {
+  color: var(--color-coffee);
+  font-family: var(--font-display);
+  font-size: var(--font-size-md);
+}
+
+.visit-event-card time {
+  color: var(--color-olive);
+  font-size: var(--font-size-sm);
+  font-weight: 850;
+}
+
+.visit-event-card p {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.visit-event-card .button {
+  justify-self: start;
+  margin-top: var(--space-2);
+}
+
+.visit-empty {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-warm-white);
+}
+
+.visit-empty p {
+  color: var(--color-text-muted);
+}
+
+.visit-error {
+  margin: 0;
+}
+
+.visit-instagram-link {
+  justify-self: start;
+}
+
+@media (max-width: 44rem) {
+  .visit-highlights {
+    grid-template-columns: 1fr;
+  }
+}
+
